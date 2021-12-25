@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>markdown | 小明的技术博客</title>
+<title>hugo的eureka主题使用介绍 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -55,7 +55,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="小明的技术博客">
+  content="支持画图表、表格、数学公司的markdown语法">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,46 +63,51 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Series",
-      "item":"/series/"},{
+      "name":"技术文章",
+      "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"markdown",
-      "item":"/series/markdown/"}]
+      "name":"hugo的eureka主题使用介绍",
+      "item":"/posts/develop/markdown/hugo-eureka-theme-guide/"}]
 }
 </script>
 
 
 
-
 <script type="application/ld+json">
 {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[{
-            "@type":"ListItem",
-            "position":  1 ,
-            "name": "hugo的markdown的语法介绍",
-            "description": "使用markdown和html语法",
-            "url": "/posts/develop/markdown/markdown-syntax/"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/develop/markdown/hugo-eureka-theme-guide/"
+    },
+    "headline": "hugo的eureka主题使用介绍 | 小明的技术博客","datePublished": "2021-03-31T13:11:22+08:00",
+    "dateModified": "2021-03-31T13:11:22+08:00",
+    "wordCount":  64 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
         }
-    ]
+        },
+    "description": "\u003ch2 id=\u0022支持画图表表格数学公司的markdown语法\u0022\u003e支持画图表、表格、数学公司的markdown语法\u003c\/h2\u003e"
 }
-</script><meta property="og:title" content="markdown | 小明的技术博客" />
-<meta property="og:type" content="website" />
+</script><meta property="og:title" content="hugo的eureka主题使用介绍 | 小明的技术博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/series/markdown/" />
+<meta property="og:url" content="/posts/develop/markdown/hugo-eureka-theme-guide/" />
 
 
 
 
-
-<meta property="og:description" content="小明的技术博客" />
-
+<meta property="og:description" content="支持画图表、表格、数学公司的markdown语法" />
 
 
 
@@ -119,14 +124,17 @@
 
 
 
-<meta property="og:updated_time" content="2020-03-11T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2021-03-31T13:11:22&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-03-31T13:11:22&#43;08:00" />
 
 
 
-<meta property="article:section" content="series" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/series/markdown/index.xml" title="小明的技术博客" />
+
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -145,7 +153,7 @@
     <div id="target"
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">技术文章</a>
         </div>
 
         <div class="flex">
@@ -196,30 +204,16 @@
   <main class="flex-grow pt-16">
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">markdown</h1>
-    
-</article>
-<div class="bg-secondary-bg rounded px-6">
-    <div class="overflow-hidden divide-y">
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/develop/markdown/markdown-syntax/" class="font-bold text-xl hover:text-eureka">hugo的markdown的语法介绍</a>
-</div>
-<div class="content">
-  
-    使用markdown和html语法
-  
-</div>
 
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">hugo的eureka主题使用介绍</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2020-03-11</span>
+        <span>2021-03-31</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -227,43 +221,110 @@
     </div>
     
     
-    <div class="mr-6 my-2">
-        <i class="fas fa-folder mr-1"></i>
-        
-        <a href="/categories/themes/" class="hover:text-eureka">themes</a>
-        
-        
-        <span>, </span>
-        <a href="/categories/syntax/" class="hover:text-eureka">syntax</a>
+
+    
+</div>
         
         
-        <span>, </span>
-        <a href="/categories/markdown/" class="hover:text-eureka">markdown</a>
+        
+
+        <div class="content">
+            <h2 id="支持画图表表格数学公司的markdown语法">支持画图表、表格、数学公司的markdown语法</h2>
+<h3 id="支持使用mermaid绘图的markdown语法">支持使用mermaid绘图的markdown语法</h3>
+<pre><code class="language-html">&lt;div class=&quot;mermaid&quot;&gt;
+  graph TD
+  A[Client] --&gt; B[Load Balancer]
+  B --&gt; C[Server1]
+  B --&gt; D[Server2]
+&lt;/div&gt;
+
+And here is another:
+
+&lt;div class=&quot;mermaid&quot;&gt;
+  graph TD
+  A[Client] --&gt;|tcp_123| B(Load Balancer)
+  B --&gt;|tcp_456| C[Server1]
+  B --&gt;|tcp_456| D[Server2]
+&lt;/div&gt;
+</code></pre>
+<div class="mermaid">
+  graph TD
+  A[Client] --> B[Load Balancer]
+  B --> C[Server1]
+  B --> D[Server2]
+</div>
+<p>And here is another:</p>
+<div class="mermaid">
+  graph TD
+  A[Client] -->|tcp_123| B(Load Balancer)
+  B -->|tcp_456| C[Server1]
+  B -->|tcp_456| D[Server2]
+</div>
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/develop/markdown/emoji-support/" class="block">支持emoji表情</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/develop/markdown/math-support/" class="block">数学支持</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#支持画图表表格数学公司的markdown语法">支持画图表、表格、数学公司的markdown语法</a>
+      <ul>
+        <li><a href="#支持使用mermaid绘图的markdown语法">支持使用mermaid绘图的markdown语法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
         
     </div>
     
 
     
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/markdown/" class="hover:text-eureka">markdown</a>
-        
-    </div>
     
 </div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-</div>
-
-
-</div>
-
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
 
       </div>
     </div>

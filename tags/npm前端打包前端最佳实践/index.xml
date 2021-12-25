@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>npm,前端打包,前端,最佳实践 on 小明的技术博客</title>
+    <link>/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+    <description>Recent content in npm,前端打包,前端,最佳实践 on 小明的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt; and &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 25 Dec 2021 19:56:07 +0800</lastBuildDate><atom:link href="/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npm最佳实践</title>
+      <link>/posts/develop/npm-webpack-vite-yarn/npm-package/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/posts/develop/npm-webpack-vite-yarn/npm-package/</guid>
+      <description>发布到私有仓库 package.json 配置
+directories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { //指定发布仓库 &amp;quot;publishConfig&amp;quot;: { &amp;quot;registry&amp;quot;: &amp;quot;https://registry.npmjs.org/&amp;quot; }, //指定引擎版本 &amp;quot;engines&amp;quot;: { &amp;quot;node&amp;quot;: &amp;quot;&amp;gt;= 8.0.0&amp;quot;, &amp;quot;npm&amp;quot;: &amp;quot;&amp;gt;= 5.0.0&amp;quot; }, //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 &amp;quot;dependencies&amp;quot;: { &amp;quot;local&amp;quot;: &amp;quot;file://Users/xiaoming/example.gz&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;http://w.cc/visionmedia/example.gz&amp;quot;, &amp;quot;express&amp;quot;: &amp;quot;git://w.cc/visionmedia/express&amp;quot;, &amp;quot;b&amp;quot;:&amp;quot;git+ssh://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;c&amp;quot;:&amp;quot;git+https://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;mocha&amp;quot;: &amp;quot;visionmedia/mocha#4727d357ea&amp;quot; } }  </description>
+    </item>
+    
+  </channel>
+</rss>

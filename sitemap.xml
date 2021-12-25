@@ -12,6 +12,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/develop/npm-webpack-vite-yarn/npm-package/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -32,17 +42,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/emoji-support/</loc>
+    <loc>/posts/develop/markdown/emoji-support/</loc>
     <lastmod>2021-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/hugo-eureka-theme-guide/</loc>
+    <loc>/posts/develop/markdown/hugo-eureka-theme-guide/</loc>
     <lastmod>2021-03-31T13:11:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/math-support/</loc>
+    <loc>/posts/develop/markdown/math-support/</loc>
     <lastmod>2020-11-20T22:52:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -62,7 +72,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/markdown-syntax/</loc>
+    <loc>/posts/develop/markdown/markdown-syntax/</loc>
     <lastmod>2020-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -99,6 +109,10 @@
   </url><url>
     <loc>/categories/themes/</loc>
     <lastmod>2020-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/develop/ios/xcode/xcode-best-practise/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

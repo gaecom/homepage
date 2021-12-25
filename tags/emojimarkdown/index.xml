@@ -11,10 +11,10 @@
     <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/emojimarkdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>支持emoji表情</title>
-      <link>/posts/emoji-support/</link>
+      <link>/posts/develop/markdown/emoji-support/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/emoji-support/</guid>
+      <guid>/posts/develop/markdown/emoji-support/</guid>
       <description>&lt;p&gt;可以支持各种方式的emoji表情的嵌入&lt;/p&gt;</description>
     </item>
     

@@ -21,39 +21,63 @@
     </item>
     
     <item>
+      <title>npm最佳实践</title>
+      <link>/posts/develop/npm-webpack-vite-yarn/npm-package/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/posts/develop/npm-webpack-vite-yarn/npm-package/</guid>
+      <description>发布到私有仓库 package.json 配置
+directories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { //指定发布仓库 &amp;quot;publishConfig&amp;quot;: { &amp;quot;registry&amp;quot;: &amp;quot;https://registry.npmjs.org/&amp;quot; }, //指定引擎版本 &amp;quot;engines&amp;quot;: { &amp;quot;node&amp;quot;: &amp;quot;&amp;gt;= 8.0.0&amp;quot;, &amp;quot;npm&amp;quot;: &amp;quot;&amp;gt;= 5.0.0&amp;quot; }, //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 &amp;quot;dependencies&amp;quot;: { &amp;quot;local&amp;quot;: &amp;quot;file://Users/xiaoming/example.gz&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;http://w.cc/visionmedia/example.gz&amp;quot;, &amp;quot;express&amp;quot;: &amp;quot;git://w.cc/visionmedia/express&amp;quot;, &amp;quot;b&amp;quot;:&amp;quot;git+ssh://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;c&amp;quot;:&amp;quot;git+https://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;mocha&amp;quot;: &amp;quot;visionmedia/mocha#4727d357ea&amp;quot; } }  </description>
+    </item>
+    
+    <item>
       <title>支持emoji表情</title>
-      <link>/posts/emoji-support/</link>
+      <link>/posts/develop/markdown/emoji-support/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/emoji-support/</guid>
+      <guid>/posts/develop/markdown/emoji-support/</guid>
       <description>&lt;p&gt;可以支持各种方式的emoji表情的嵌入&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>hugo的eureka主题使用介绍</title>
-      <link>/posts/hugo-eureka-theme-guide/</link>
+      <link>/posts/develop/markdown/hugo-eureka-theme-guide/</link>
       <pubDate>Wed, 31 Mar 2021 13:11:22 +0800</pubDate>
       
-      <guid>/posts/hugo-eureka-theme-guide/</guid>
+      <guid>/posts/develop/markdown/hugo-eureka-theme-guide/</guid>
       <description>&lt;h2 id=&#34;支持画图表表格数学公司的markdown语法&#34;&gt;支持画图表、表格、数学公司的markdown语法&lt;/h2&gt;</description>
     </item>
     
     <item>
       <title>数学支持</title>
-      <link>/posts/math-support/</link>
+      <link>/posts/develop/markdown/math-support/</link>
       <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
       
-      <guid>/posts/math-support/</guid>
+      <guid>/posts/develop/markdown/math-support/</guid>
       <description>&lt;p&gt;使用 KaTeX 支持数学公式&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>hugo的markdown的语法介绍</title>
-      <link>/posts/markdown-syntax/</link>
+      <link>/posts/develop/markdown/markdown-syntax/</link>
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/markdown-syntax/</guid>
+      <guid>/posts/develop/markdown/markdown-syntax/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/posts/develop/ios/xcode/xcode-best-practise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/develop/ios/xcode/xcode-best-practise/</guid>
+      <description>xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈
+  提高XCode编译时使用的线程数
+defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）
+  使用快捷键,增加terminal或者外部工具 preferences(cmd+,) -&amp;gt; behavior -&amp;gt; + -&amp;gt; run script 和快捷键
+条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle
+##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ &amp;quot;${CONFIGURATION}&amp;quot; == &amp;quot;Debug&amp;quot; ]; then cp -r &amp;quot;${PROJECT_DIR}/Settings.bundle&amp;quot; &amp;quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&amp;quot; fi  使用 去除不必要的framework build settings &amp;gt; other linker flag &amp;gt; &amp;ldquo;Any iOS Simulator SDK&amp;quot;键入-weak_framework Xxx</description>
     </item>
     
   </channel>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>小明的技术博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈
+  提高XCode编译时使用的线程数
+defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）
+  使用快捷键,增加terminal或者外部工具 preferences(cmd&#43;,) -&gt; behavior -&gt; &#43; -&gt; run script 和快捷键
+条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle
+##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ &quot;${CONFIGURATION}&quot; == &quot;Debug&quot; ]; then cp -r &quot;${PROJECT_DIR}/Settings.bundle&quot; &quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&quot; fi  使用 去除不必要的framework build settings &gt; other linker flag &gt; &ldquo;Any iOS Simulator SDK&quot;键入-weak_framework Xxx">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"技术文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"",
+      "item":"/posts/develop/ios/xcode/xcode-best-practise/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/develop/ios/xcode/xcode-best-practise/"
+    },
+    "headline": "小明的技术博客","wordCount":  1069 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈\n  提高XCode编译时使用的线程数\ndefaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）\n  使用快捷键,增加terminal或者外部工具 preferences(cmd\u002b,) -\u0026gt; behavior -\u0026gt; \u002b -\u0026gt; run script 和快捷键\n条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle\n##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ \u0026quot;${CONFIGURATION}\u0026quot; == \u0026quot;Debug\u0026quot; ]; then cp -r \u0026quot;${PROJECT_DIR}\/Settings.bundle\u0026quot; \u0026quot;${BUILT_PRODUCTS_DIR}\/${PRODUCT_NAME}.app\u0026quot; fi  使用 去除不必要的framework build settings \u0026gt; other linker flag \u0026gt; \u0026ldquo;Any iOS Simulator SDK\u0026quot;键入-weak_framework Xxx"
+}
+</script><meta property="og:title" content="小明的技术博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/develop/ios/xcode/xcode-best-practise/" />
+
+
+
+
+<meta property="og:description" content="xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈
+  提高XCode编译时使用的线程数
+defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）
+  使用快捷键,增加terminal或者外部工具 preferences(cmd&#43;,) -&gt; behavior -&gt; &#43; -&gt; run script 和快捷键
+条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle
+##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ &quot;${CONFIGURATION}&quot; == &quot;Debug&quot; ]; then cp -r &quot;${PROJECT_DIR}/Settings.bundle&quot; &quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&quot; fi  使用 去除不必要的framework build settings &gt; other linker flag &gt; &ldquo;Any iOS Simulator SDK&quot;键入-weak_framework Xxx" />
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="小明的技术博客" />
+
+
+
+
+
+
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">技术文章</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text"></h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>6分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <h3 id="xcode应用测试与发布三种方式">xcode应用测试与发布三种方式</h3>
+<ol>
+<li>pgyer</li>
+<li>fir</li>
+<li>TestFlight</li>
+</ol>
+<h3 id="加快xcode编译">加快xcode编译</h3>
+<ol>
+<li>
+<p>build settings  改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈</p>
+</li>
+<li>
+<p>提高XCode编译时使用的线程数</p>
+<pre><code>defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)
+</code></pre>
+</li>
+<li>
+<p>build settings 的 Build Active Architecture Only  改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）</p>
+</li>
+</ol>
+<h3 id="使用快捷键增加terminal或者外部工具">使用快捷键,增加terminal或者外部工具</h3>
+<p>preferences(cmd+,) -&gt; behavior -&gt; + -&gt; run script 和快捷键</p>
+<h3 id="条件编译针对不支持模拟器的一些库或者使用不同的settings">条件编译(针对不支持模拟器的一些库)，或者使用不同的settings</h3>
+<p>通过new file,增加settings bundle</p>
+<pre><code>##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中
+if [ &quot;${CONFIGURATION}&quot; == &quot;Debug&quot; ]; then
+    cp -r &quot;${PROJECT_DIR}/Settings.bundle&quot; &quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&quot;
+fi
+</code></pre>
+<p>使用 去除不必要的framework  build settings  &gt; other linker flag &gt; &ldquo;Any iOS Simulator SDK&quot;键入-weak_framework  Xxx</p>
+<h3 id="条件编译参考">条件编译参考</h3>
+<ol>
+<li>Build Settings &gt; Build Options &gt; Excluded Source File Names 或者使用 file &gt; workspace settings 使用build system &gt; legacy build system</li>
+</ol>
+<blockquote>
+<p>target&rsquo;s Build Settings &gt; Tap the + button &gt; Add User-Defined Setting The key is either <code>INCLUDED_SOURCE_FILE_NAMES</code> or <code>EXCLUDED_SOURCE_FILE_NAMES</code></p>
+<p>填写排除的xxx.framework名字</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>swift/objc 代码中环境变量</p>
+<pre><code class="language-swift">/**
+TARGET_OS_WIN32           - Generated code will run under 32-bit Windows
+TARGET_OS_UNIX            - Generated code will run under some Unix (not OSX) 
+TARGET_OS_MAC             - Generated code will run under Mac OS X variant
+   TARGET_OS_IPHONE          - Generated code for firmware, devices, or simulator 
+      TARGET_OS_IOS             - Generated code will run under iOS 
+      TARGET_OS_TV              - Generated code will run under Apple TV OS
+      TARGET_OS_WATCH           - Generated code will run under Apple Watch OS
+   TARGET_OS_SIMULATOR      - Generated code will run under a simulator
+   TARGET_OS_EMBEDDED       - Generated code for firmware
+**/
+
+#if !TARGET_OS_IPHONE &amp;&amp; !TARGET_OS_SIMULATOR &amp;&amp; !TARGET_OS_EMBEDDED
+    // macOS-only code
+#endif
+
+#if TARGET_OS_SIMULATOR
+  // Simulator code
+#endif
+
+// from Swift 4.1:
+#if !TARGET_IPHONE_SIMULATOR
+
+#if targetEnvironment(simulator)
+    // code for the simulator here
+#else
+   // code for real devices here
+#endif
+
+#if TARGET_OS_IPHONE
+// iOS code
+#else
+// OSX code
+#endif
+</code></pre>
+</li>
+</ol>
+<h3 id="cocoapod-hook">cocoapod hook</h3>
+<h4 id="增加钩子修改参数">增加钩子修改参数</h4>
+<p>pre_install,post_install(修改完写入Xcode project前),post_integrate(修改完写入磁盘后),post_integrate(修改完写入磁盘前)</p>
+<pre><code class="language-ruby">post_install do |installer|
+    installer.aggregate_targets.each do |aggregate_target|
+        aggregate_target.xcconfigs.each do |config_name, xcconfig|
+            if aggregate_target.name == 'Pods-GYDApp'
+              xcconfig_path = aggregate_target.xcconfig_path(config_name)
+              #给生成的debug.xcconfig/release.xcconfig中增加一行
+              File.open(xcconfig_path, &quot;a&quot;) {|file| file.puts '#include? &quot;UniMP/Custom/XConfig/unimp.xcconfig&quot;'}
+              #xcconfig.other_linker_flags &lt;&lt; '-l&quot;AFNetworkingXXX&quot;'
+            end
+        end
+    end
+end
+</code></pre>
+<pre><code class="language-ruby">#修改libraries的参数(-l),:
+post_install do |installer|
+    installer.aggregate_targets.each do |aggregate_target|
+        aggregate_target.xcconfigs.each do |config_name, xcconfig|
+            if aggregate_target.name == 'Pods-GYDApp'
+             #:frameworks,等
+            xcconfig.other_linker_flags[:libraries] &lt;&lt; 'AFNetworkingXX'
+
+  
+            xcconfig_path = aggregate_target.xcconfig_path(config_name)
+            xcconfig.save_as(xcconfig_path)
+            end
+        end
+    end
+end
+</code></pre>
+<pre><code class="language-ruby">
+# 修改编译参数
+post_install do |installer|
+  # 1. 遍历项目中所有target
+  installer.pods_project.targets.each do |target|
+    # 2. 遍历build_configurations
+    target.build_configurations.each do |config|
+      # 3. 修改build_settings中的ENABLE_BITCODE
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+</code></pre>
+<h3 id="插入脚本">插入脚本</h3>
+<p>其中：[CP]开头的，就是CocoaPod插入的脚本</p>
+<p><img src="/Users/i/htdocs/doc/gld/imgs/xcode/image-20211107190857620.png" alt="image-20211107190857620"></p>
+<pre><code>Check Pods Manifest.lock，用来检查cocoapod管理的三方库是否需要更新
+Embed Pods Framework，运行脚本来链接三方库的静态/动态库
+Copy Pods Resources，运行脚本来拷贝三方库的资源文件
+</code></pre>
+<h4 id="环境变量">环境变量</h4>
+<pre><code>#ifdef DEBUG
+//...
+#else
+//...
+#endif
+
+#ifdef TESTMODE
+//测试服务器相关的代码
+#else
+//生产服务器相关代码
+#endif
+
+
+</code></pre>
+<blockquote>
+<p>获取方法，可以 build phases 添加run script ，然后脚本中运行 set /export 导出到文件,也可以脚本中加入错误代码，让ide报错查看</p>
+</blockquote>
+<pre><code>1. @executable_path
+
+可执行文件的路径，例如/Applications/WeChat.app/Contents/MacOS
+
+2. @loader_path
+
+被加载的二进制的路径，若该二进制是可执行文件，则@loader_path等价于@executable_path。
+
+适用于非可执行二进制嵌套的场景，例如frameworkA包含frameworkB，frameworkB的加载路径就可以根据frameworkA的@loader_path给出。
+
+3. @rpath
+
+即run path，对应于工程配置中的Runpath Search Paths。是一个或者多个路径的列表，类似于环境变量$PATH。 
+</code></pre>
+<h3 id="xcode中常见环境变量">xcode中常见环境变量</h3>
+<p>$(SRCROOT) 自动变成当前工程根目录</p>
+<p>$(TARGETNAME)、ARCHS、ARCHS_STANDARD = arm64  x86_64</p>
+<p>$(EXECUTABLE_NAME)、PRODUCT_NAME</p>
+<p>$(ACTION) 、NATIVE_ARCH= x86_64</p>
+<p>Prefix Header：*-Prefix.pch，预编头文件 ，Precompile Prefix Header：设为“Yes”，表示允许加入预编译头</p>
+<p>$(BUILT_PRODUCTS_DIR)/include</p>
+<p>$(CONFIGURATION)  通过设置改变</p>
+<p>${CONFIGURATION}-iphoneos 表示Debug-iphoneos</p>
+<p>$(CURRENTCONFIG_DEVICE_DIR)</p>
+<p>$(PLATFORM_NAME)</p>
+<p>$(CURRENT_PROJECT_VERSION)</p>
+<p>$(BUILT_PRODUCTS_DIR) 最终产品路径</p>
+<p>SDK_NAMES= SDK_NAME iphonesimulator14.4</p>
+<p>$(SYMROOT) = $()/Build/Products</p>
+<p>$(BUILD_DIR) = $()/Build/Products</p>
+<p>$(BUILD_ROOT) =  $()/Build/Products</p>
+<p>INCLUDED_SOURCE_FILE_NAMES、EXCLUDED_SOURCE_FILE_NAMES</p>
+<pre><code class="language-bash">##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中
+if [ &quot;${CONFIGURATION}&quot; == &quot;Debug&quot; ]; then
+    cp -r &quot;${PROJECT_DIR}/Settings.bundle&quot; &quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&quot;
+fi
+#编译
+ xcodebuild -project &quot;${TARGET_NAME}.xcodeproj&quot; -configuration &quot;${CONFIGURATION}&quot; -target &quot;${TARGET_NAME}&quot; -sdk &quot;${OTHER_SDK_TO_BUILD}&quot; -arch &quot;${ARCH_TO_BUILD}&quot; ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=&quot;${BUILD_DIR}&quot; BUILD_ROOT=&quot;${BUILD_ROOT}&quot; &gt; &quot;${BUILD_ROOT}.build_output&quot;
+
+</code></pre>
+<h3 id="lipo-包合并与拆分">lipo 包合并与拆分</h3>
+<blockquote>
+<p>针对Mac-O的文件二进制格式 .o 到.a ,.a到.o的抽取，不同arch架构文件的获取,以及头等信息查看</p>
+<p>create or operate on universal files 源于mac系统要制作兼容powerpc平台和intel平台的程序。</p>
+<p>是管理Fat File的工具, 可以查看cpu架构, 提取特定架构，整合和拆分库文件</p>
+</blockquote>
+<pre><code class="language-bash">#抽取arm文件
+lipo xxx.a -thin armv7 -output armv7.a
+# 合成一个库的两个不同CPU架构的库为一个
+lipo -create xxx.a xxx.a -output xxx.a
+
+#链接合并.o文件为.a文件
+libtool -static -o ../xxx.a *.o
+
+
+
+
+
+</code></pre>
+<h3 id="xcode">XCODE</h3>
+<h3 id="swift和xcode混合编译">swift和xcode混合编译</h3>
+<blockquote>
+<p>Build settings 设置 objective-c bridging header 否则不生效</p>
+</blockquote>
+<h3 id="启动参数">启动参数</h3>
+<p>获取启动参数，edit scheme -&gt; 配置启动参数</p>
+<p><img src="/Users/i/htdocs/doc/gld/imgs/xcode/image-20211107182827064.png" alt="image-20211107182827064"></p>
+<pre><code class="language-objc">NSDictionary * environments = [[NSProcessInfo processInfo] environment];
+BOOL logOn = [[environments objectForKey:@&quot;Network_Log_Enabled&quot;] isEqualToString:@&quot;YES&quot;];
+</code></pre>
+<p>全部的配置分布在<code>Info Arguments options Diagnostics</code></p>
+<pre><code>-AppleLanguages (zh-Hans) 中文
+-NSDoubleLocalizedStrings YES 实现本地化
+-com.apple.CoreData.SQLDebug 3 coredata跟踪，log等级分为1到3，越高越详细
+-com.apple.CoreData.SyntaxColoredLogging YES 日志语法高亮
+
+
+</code></pre>
+<h3 id="获取启动main和main后函数">获取启动main和main后函数</h3>
+<pre><code class="language-undefined">#增加 Environment Variable
+DYLD_PRINT_STATISTICS
+DYLD_PRINT_STATISTICS_DETAILS
+
+###其他调试变量
+DYLD_FRAMEWORK_PATH
+DYLD_FALLBACK_FRAMEWORK_PATH
+DYLD_VERSIONED_FRAMEWORK_PATH
+DYLD_LIBRARY_PATH 打印库路径
+DYLD_FALLBACK_LIBRARY_PATH
+DYLD_VERSIONED_LIBRARY_PATH
+DYLD_PRINT_TO_FILE
+DYLD_SHARED_REGION
+DYLD_INSERT_LIBRARIES
+DYLD_FORCE_FLAT_NAMESPACE
+DYLD_IMAGE_SUFFIX
+DYLD_PRINT_OPTS
+DYLD_PRINT_ENV 打印环境变量
+DYLD_PRINT_LIBRARIES 
+DYLD_BIND_AT_LAUNCH 
+DYLD_DISABLE_DOFS
+DYLD_PRINT_APIS 打印APIS
+DYLD_PRINT_BINDINGS
+DYLD_PRINT_INITIALIZERS
+DYLD_PRINT_REBASINGS
+DYLD_PRINT_SEGMENTS
+DYLD_PRINT_STATISTICS 打印统计
+DYLD_PRINT_DOFS
+DYLD_PRINT_RPATHS 打印路径
+DYLD_SHARED_CACHE_DIR
+DYLD_SHARED_CACHE_DONT_VALIDATE
+</code></pre>
+<h3 id="zombie">Zombie</h3>
+<pre><code>#开启Zombie，当对象被释放后，他们仍然在内存里，只不过视图访问僵尸对象会报错，可以用于调试EXC_BAD_ACCESS
+NSZombieEnabled YES
+## NSDeallocateZombies，这样僵尸对象的内存会被释放调
+NSDeallocateZombies YES
+#MallocGuardEdges
+在分配大内存的时候，在内存前后添加额外的页，进行内存保护。
+
+#MallocScribble
+对于释放的内存，每个Byte填充成0x55，能够提高野指针的crash率。
+
+
+##MallocGuard
+开启Malloc Guard后，在调试的时候会使用libgmalloc替换malloc，从而在当内存出现错误的时候，及时crash你的App
+
+</code></pre>
+<h3 id="编译过程">编译过程</h3>
+<ol>
+<li>
+<p>dSYM 文件</p>
+<blockquote>
+<p>我们在每次编译过后，都会生成一个dsym文件。dsym文件中，存储了16进制的函数地址映射</p>
+</blockquote>
+</li>
+<li>
+<p>attribute用法</p>
+<p><code>__attribute__</code> 语法格式为：<code>__attribute__ ((attribute-list))</code> 放在声明分号“;”前面。</p>
+<pre><code>#函数属性 （Function Attribute）
+#类型属性 (Variable Attribute )
+#变量属性 (Type Attribute )
+__attribute__ ((warn_unused_result)) //如果没有使用返回值，编译的时候给出警告
+</code></pre>
+<pre><code>//弃用API，用作API更新
+#define __deprecated	__attribute__((deprecated)) 
+
+//带描述信息的弃用
+#define __deprecated_msg(_msg) __attribute__((deprecated(_msg)))
+
+//遇到__unavailable的变量/方法，编译器直接抛出Error
+#define __unavailable	__attribute__((unavailable))
+
+//告诉编译器，即使这个变量/方法 没被使用，也不要抛出警告
+#define __unused	__attribute__((unused))
+
+//和__unused相反
+#define __used		__attribute__((used))
+
+//如果不使用方法的返回值，进行警告
+#define __result_use_check __attribute__((__warn_unused_result__))
+
+//OC方法在Swift中不可用
+#define __swift_unavailable(_msg)	__attribute__((__availability__(swift, unavailable, message=_msg)))
+
+
+</code></pre>
+<ol start="4">
+<li>
+<p>clang编译警告 代码中插入 在build settings 中,增加代码质量可以设置严格参数</p>
+<pre><code class="language-swift">#warning &quot;This method can not be used&quot;
+#error &quot;error msg&quot;
+</code></pre>
+<p><img src="/Users/i/htdocs/doc/gld/imgs/xcode/image-20211107192621832.png" alt="image-20211107192621832"></p>
+</li>
+</ol>
+<h3 id="编译打包命令">编译打包命令</h3>
+<p>Info/man xcodebuild 查看帮助</p>
+<pre><code class="language-bash">//编译成.app
+xcodebuild  -workspace $projectName.xcworkspace -scheme $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
+//打包
+xcrun -sdk iphoneos PackageApplication -v $appDir/$projectName.app -o $appDir/$ipaName.ipa
+
+通过info命令，可以查看到详细的文档
+info xcodebuild
+</code></pre>
+</li>
+</ol>
+<h3 id="cathage-vs-cocoapods打包工具比较">cathage vs cocoapods打包工具比较</h3>
+<blockquote>
+<p>创建一个Cartfile，包含你希望在项目中使用的框架的列表</p>
+<p>运行Carthage，将会获取列出的框架并编译它们</p>
+<p>将编译完成的.framework二进制文件拖拽到你的Xcode项目当中</p>
+</blockquote>
+<ol>
+<li>cathage简单不修改 xcodeworkspace，cocoapod是中心化的</li>
+<li>Carthage使用xcodebuild来编译框架的二进制文件，但如何集成它们将交由用户自己判断。CocoaPods的方法更易于使用，但Carthage更灵活并且是非侵入性的</li>
+<li>Carthage创建的是去中心化的依赖管理器。它没有总项目的列表，这能够减少维护工作并且避免任何中心化带来的问题</li>
+</ol>
+<h3 id="xcode的cicd进行命令行打包的工具列表">xcode的CI/CD，进行命令行打包的工具列表</h3>
+<ol>
+<li>xctool</li>
+<li>ios-sim  安装完后需要到 安装目录里面执行yarn 解决node modules安装错误</li>
+<li>ios-deploy</li>
+<li>Fastlane</li>
+<li>pgyer</li>
+<li>fir</li>
+<li>TestFlight</li>
+</ol>
+<h3 id="调试api">调试API</h3>
+<h4 id="1-if-条件编译">1. #if 条件编译</h4>
+<pre><code>
+#if DEBUG
+let apiBaseURL = URL(string: &quot;https://api.staging.example.com&quot;)!
+#else
+let apiBaseURL = URL(string: &quot;https://api.example.com&quot;)!
+#endif
+</code></pre>
+<ol start="2">
+<li>
+<p>xcconfig</p>
+</li>
+<li>
+<p>使用钩子，build，run,替换Info.plist等</p>
+<p><img src="/Users/i/htdocs/doc/gld/imgs/xcode/image-20211127200902543.png" alt="image-20211127200902543"></p>
+</li>
+</ol>
+<h3 id="xcconfig配置">xcconfig配置</h3>
+<pre><code>#include &quot;path/to/File.xcconfig&quot;
+BUILD_SETTING_NAME[sdk=sdk][arch=architecture]
+OTHER_LDFLAGS = $(inherited) -weak_framework RevealServer
+FRAMEWORK_SEARCH_PATHS = $(inherited) /Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries
+## 接着在Info.plist里配置变量 API_XXX  = $(API_URL),可以从运行时候读取变量
+## Bundle.main.object(forInfoDictionaryKey:key)
+API_URL=dev.cc
+</code></pre>
+<p>创建configuration list file</p>
+<p>配置环境变量、编译变量、覆盖编译行为，链接框架路径选择等</p>
+<p>指定生效的target</p>
+<p><img src="/Users/i/htdocs/doc/gld/imgs/xcode/image-20211127200351314.png" alt="image-20211127200351314"></p>
+<h3 id="xcode导入文件的两种选择">xcode导入文件的两种选择：</h3>
+<p>（1）create groups：相当于添加了一个groups，会以黄色文件夹的形式存在，调用文件中的某个类时，直接包含头文件就可以调用。（文件会被编译）</p>
+<p>（2）create folder references：只是将文件单纯的引用了，会以蓝色文件夹的形式存在，使用时需要加入其路径，否则会导致数据为空。（文件不会被编译）</p>
+<h2 id="xcode-文件介绍">xcode 文件介绍</h2>
+<h3 id="projectpbxproj">project.pbxproj</h3>
+<p><a href="https://www.jianshu.com/p/e82ec6a56fc2">Xcode工程文件project.pbxproj</a></p>
+<h3 id="framework中optional和required的区别">framework中optional和required的区别</h3>
+<p>（1）Require：强引用，一定会被加载到内存中，及时不使用也会被加载到内存中。</p>
+<p>（2）Optional：弱引用，开始的并不会加载，在使用的时候才会加载，会节省加载时的时间。</p>
+<p>或者使用-weak_framework</p>
+<p>有一些库，如Social.framework和AdSupport.framework，是在IOS6之后才被引入的，更新了一些新的特性，如果运行在5.0甚至更低的设备上，这些库不支持，会编译通不过，这时候就要使用弱引用了。</p>
+<h3 id="userinterfacestatexcuserstate-用户的xcode-ide使用的状态可忽略">UserInterfaceState.xcuserstate 用户的xcode ide使用的状态，可忽略</h3>
+<p>如果该文件损坏，会导致ide打开，没有编译工具栏等， 可以直接删除它</p>
+<pre><code class="language-bash"> plutil -convert xml1  /Users/i/htdocs/i/XcodeExplore/XcodeExplore.xcodeproj/project.xcworkspace/xcuserdata/i.xcuserdatad/UserInterfaceState.xcuserstate -o output
+</code></pre>
+<h3 id="xcshareddata-ide是用户的编译设置">xcshareddata ide是用户的编译设置</h3>
+<h3 id="生成24位本机唯一的uuid代码">生成24位本机唯一的UUID代码</h3>
+<pre><code class="language-ruby">class XcodeUUIDGenerator
+
+    def initialize
+        @num = [Time.now.to_i, Process.pid, getMAC]
+    end
+
+    # Get the ethernet hardware address (&quot;MAC&quot;). This version
+    # works on Mac OS X 10.6 (Snow Leopard); it has not been tested
+    # on other versions.
+
+    def getMAC(interface='en0')
+        addrMAC = `ifconfig #{interface} ether`.split(&quot;\n&quot;)[2]
+        addrMAC ? addrMAC.strip.split[1].gsub(':','').to_i(16) : 0
+    end
+
+    def generate
+        @num[0] += 1
+        self
+    end
+
+    def to_s
+        &quot;%08X%04X%012X&quot; % @num
+    end
+end
+gen = XcodeUUIDGenerator.new
+id1 = gen.generate.to_s
+id2 = gen.generate.to_s
+id3 = gen.generate.to_s
+</code></pre>
+<h3 id="projectxcworkspace-ide的设置-可忽略">project.xcworkspace/ ide的设置 可忽略</h3>
+<h3 id="xcuserdata-可忽略">xcuserdata 可忽略</h3>
+<h3 id="pod">pod</h3>
+<h3 id="安装新版本">安装新版本</h3>
+<pre><code>#更新版本
+pod update podName
+
+#解除integrate使用
+pod deintegrate
+#查看xcode，系统，pod插件版本
+pod env
+</code></pre>
+<h3 id="building-for-ios-simulator-but-linking-in-object-file-built-for-ios">building for iOS Simulator, but linking in object file built for iOS</h3>
+<ol>
+<li>
+<p>因为编译时候了指定了为模拟器/设备，而连接的时候又包括所有，导致。修改target -》 build settings -&gt; only active arch 为yes</p>
+</li>
+<li>
+<p>打真机包的时候 Excluded Architecture 里的值要去掉</p>
+</li>
+</ol>
+<h3 id="building-for-ios-simulatorbut-linking-in-object-file-built-for-ios-for-arm64">building for iOS Simulator,but linking in object file built for iOS for arm64</h3>
+<ol>
+<li>去掉VALID_ARCHS里面的值</li>
+<li>或者 EXCLUDEd arch 增加arm64</li>
+</ol>
+<h3 id="自动发布bash脚本">自动发布bash脚本</h3>
+<pre><code class="language-bash">#!/bin/sh
+#
+
+#rvm system
+
+function failed() {
+    echo &quot;Failed: $@&quot; &gt;&amp;2
+    exit 1
+}
+
+archiveName=&quot;XXXX&quot;
+projectName=&quot;XXXX&quot;
+scheme=&quot;XXXXX&quot;
+configuration=&quot;XXXX&quot;
+exportOptionsPlist=&quot;BuildScript-AppStore/exportOptions.plist&quot;
+ipaPath=&quot;$PWD/build/${archiveName}/${scheme}.ipa&quot;
+appleid=&quot;XXX&quot;
+applepassword=&quot;XXX&quot;
+
+#build clean
+xcodebuild clean -project ${projectName} \
+                 -configuration ${configuration} \
+                 -alltargets || failed &quot;clean error&quot;
+
+
+
+#archive
+xcodebuild archive -project ${projectName} \
+                    -configuration ${configuration} \
+                    -scheme ${scheme} \
+                    -destination generic/platform=iOS \
+                    -archivePath $PWD/build/${archiveName}.xcarchive || failed &quot;archive error&quot;
+
+
+
+
+#Export Complete
+xcodebuild -exportArchive -archivePath $PWD/build/${archiveName}.xcarchive \
+            -exportOptionsPlist ${exportOptionsPlist} \
+            -exportPath ${buildPath}/appStorebuild/${archiveName} \
+            -verbose || failed &quot;export error&quot;
+
+#发布到iTunesConnect
+altoolPath=&quot;/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool&quot;
+
+#validate
+&quot;${altoolPath}&quot; --validate-app -f ${ipaPath} -u &quot;$appleid&quot; -p &quot;$applepassword&quot; -t ios --output-format xml || failed &quot;validate error&quot;
+
+#upload
+&quot;${altoolPath}&quot; --upload-app -f ${ipaPath} -u &quot;$appleid&quot; -p &quot;$applepassword&quot; -t ios --output-format xml || failed &quot;upload error&quot;
+
+
+curl -F &quot;file=@${ipaPath}&quot; \
+     -F &quot;uKey=XXXX&quot; \
+     -F &quot;_api_key=XXXXXX&quot; \
+     -F &quot;updateDescription=版本描述&quot; \
+    https://www.pgyer.com/apiv1/app/upload || failed &quot;提交蒲公英失败&quot;
+</code></pre>
+<h3 id="调试方式">调试方式</h3>
+<h4 id="1-获取加载的动态链接库">1. 获取加载的动态链接库</h4>
+<pre><code class="language-bash">#相当于ldd
+otool -L /Applications/WeChat.app/Contents/MacOS/WeChat
+</code></pre>
+<h4 id="2-defaults读写配置的位置">2. defaults读写配置的位置</h4>
+<p>xcode显示编译时间，修改方式</p>
+<pre><code>#1. 是编辑了里面选项~/Library/Preferences/com.apple.dt.Xcode.plist
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+#2. plistutil 转换plist二进制为xml，修改完后再恢复为二进制
+</code></pre>
+<h3 id="打包三种方式">打包三种方式</h3>
+<ol>
+<li>archive</li>
+<li>命令行  获取exportOptions.plist 可以根据模版生成，也可以先用xcode打包，然后解压ipa查看里面内容，拷贝出来，再定制修改</li>
+<li>app拷贝到Payload文件夹，压缩成zip，改名ipa</li>
+</ol>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/develop/markdown/markdown-syntax/" class="block">hugo的markdown的语法介绍</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+  <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://h.hao.vin/">hao.vin</a> and <a href="https://h.hao.vin/">hao.vin</a>
+ &middot;  
+</div></div>
+  </footer>
+</body>
+
+</html>
