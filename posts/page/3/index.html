@@ -67,9 +67,15 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "",
-            "description": "xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈\n  提高XCode编译时使用的线程数\ndefaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）\n  使用快捷键,增加terminal或者外部工具 preferences(cmd+,) -\u0026gt; behavior -\u0026gt; + -\u0026gt; run script 和快捷键\n条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle\n##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ \u0026quot;${CONFIGURATION}\u0026quot; == \u0026quot;Debug\u0026quot; ]; then cp -r \u0026quot;${PROJECT_DIR}/Settings.bundle\u0026quot; \u0026quot;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\u0026quot; fi  使用 去除不必要的framework build settings \u0026gt; other linker flag \u0026gt; \u0026ldquo;Any iOS Simulator SDK\u0026quot;键入-weak_framework Xxx",
-            "url": "/posts/develop/ios/xcode/xcode-best-practise/"
+            "name": "数学支持",
+            "description": "\u003cp\u003e使用 KaTeX 支持数学公式\u003c/p\u003e",
+            "url": "/posts/develop/markdown/math-support/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "hugo的markdown的语法介绍",
+            "description": "使用markdown和html语法",
+            "url": "/posts/develop/markdown/markdown-syntax/"
         }
     ]
 }
@@ -193,31 +199,83 @@
   
   <div class="w-full ">
     <div class="mb-4">
-  <a href="/posts/develop/ios/xcode/xcode-best-practise/" class="font-bold text-xl hover:text-eureka"></a>
+  <a href="/posts/develop/markdown/math-support/" class="font-bold text-xl hover:text-eureka">数学支持</a>
 </div>
 <div class="content">
   
-    xcode应用测试与发布三种方式  pgyer fir TestFlight  加快xcode编译   build settings 改为dwarf 禁止sym，注意运行时没有dwarf，会没有调试堆栈
-  提高XCode编译时使用的线程数
-defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 6 (cpu*1.5)    build settings 的 Build Active Architecture Only 改为yes（此选项在Release模式下必须为No，否则发布的ipa在部分设备上将不能运行。）
-  使用快捷键,增加terminal或者外部工具 preferences(cmd&#43;,) -&gt; behavior -&gt; &#43; -&gt; run script 和快捷键
-条件编译(针对不支持模拟器的一些库)，或者使用不同的settings 通过new file,增加settings bundle
-##bash中使用${},xcode编译配置中使用$() 根据条件添加文件编译，文件可以在settings.bundle中 if [ &#34;${CONFIGURATION}&#34; == &#34;Debug&#34; ]; then cp -r &#34;${PROJECT_DIR}/Settings.bundle&#34; &#34;${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app&#34; fi  使用 去除不必要的framework build settings &gt; other linker flag &gt; “Any iOS Simulator SDK&#34;键入-weak_framework Xxx
+    使用 KaTeX 支持数学公式
+
   
 </div>
 
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>0001-01-01</span>
+        <span>2020-11-20</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>6分钟阅读时长</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
 
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/develop/markdown/markdown-syntax/" class="font-bold text-xl hover:text-eureka">hugo的markdown的语法介绍</a>
+</div>
+<div class="content">
+  
+    使用markdown和html语法
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2020-03-11</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/themes/" class="hover:text-eureka">themes</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/syntax/" class="hover:text-eureka">syntax</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/markdown/" class="hover:text-eureka">markdown</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/markdown/" class="hover:text-eureka">markdown</a>
+        
+    </div>
     
 </div>
 

@@ -15,8 +15,7 @@
       <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
       
       <guid>/posts/develop/npm-webpack-vite-yarn/npm-package/</guid>
-      <description>发布到私有仓库 package.json 配置
-directories.bin 指定bin的目录 directories.lib 指定bin的lib位置 package.json的内容中 { //指定发布仓库 &amp;quot;publishConfig&amp;quot;: { &amp;quot;registry&amp;quot;: &amp;quot;https://registry.npmjs.org/&amp;quot; }, //指定引擎版本 &amp;quot;engines&amp;quot;: { &amp;quot;node&amp;quot;: &amp;quot;&amp;gt;= 8.0.0&amp;quot;, &amp;quot;npm&amp;quot;: &amp;quot;&amp;gt;= 5.0.0&amp;quot; }, //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径 &amp;quot;dependencies&amp;quot;: { &amp;quot;local&amp;quot;: &amp;quot;file://Users/xiaoming/example.gz&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;http://w.cc/visionmedia/example.gz&amp;quot;, &amp;quot;express&amp;quot;: &amp;quot;git://w.cc/visionmedia/express&amp;quot;, &amp;quot;b&amp;quot;:&amp;quot;git+ssh://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;c&amp;quot;:&amp;quot;git+https://user@hostname:project.git#commit-ish&amp;quot;, &amp;quot;mocha&amp;quot;: &amp;quot;visionmedia/mocha#4727d357ea&amp;quot; } }  </description>
+      <description>&lt;p&gt;介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践&lt;/p&gt;</description>
     </item>
     
   </channel>

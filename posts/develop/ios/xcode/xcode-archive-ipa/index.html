@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>npm最佳实践 | 小明的技术博客</title>
+<title>最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -55,7 +55,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践">
+  content="2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,8 +67,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"npm最佳实践",
-      "item":"/posts/develop/npm-webpack-vite-yarn/npm-package/"}]
+      "name":"最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程",
+      "item":"/posts/develop/ios/xcode/xcode-archive-ipa/"}]
 }
 </script>
 
@@ -80,11 +80,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/develop/npm-webpack-vite-yarn/npm-package/"
+        "@id": "/posts/develop/ios/xcode/xcode-archive-ipa/"
     },
-    "headline": "npm最佳实践 | 小明的技术博客","datePublished": "2021-12-25T19:56:07+08:00",
+    "headline": "最新xcode编译、打包成ipa、测试、发布到appstore\/苹果商店\/testflight\/pyger\/fir等完整流程 | 小明的技术博客","datePublished": "2021-12-25T19:56:07+08:00",
     "dateModified": "2021-12-25T19:56:07+08:00",
-    "wordCount":  41 ,
+    "wordCount":  85 ,
     "publisher": {
         "@type": "Person",
         "name": "C. Wang",
@@ -93,21 +93,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "\u003cp\u003e介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践\u003c\/p\u003e"
+    "description": "\u003cp\u003e2022年最新版 xcode编译、打包成ipa、测试、发布到appstore\/苹果商店\/testflight\/pyger\/fir等完整流程\u003c\/p\u003e"
 }
-</script><meta property="og:title" content="npm最佳实践 | 小明的技术博客" />
+</script><meta property="og:title" content="最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程 | 小明的技术博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/develop/npm-webpack-vite-yarn/npm-package/" />
+<meta property="og:url" content="/posts/develop/ios/xcode/xcode-archive-ipa/" />
 
 
 
 
-<meta property="og:description" content="介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践" />
+<meta property="og:description" content="2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程" />
 
 
 
@@ -134,7 +134,7 @@
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="npm,前端打包,前端,最佳实践" />
+<meta property="article:tag" content="ios,xcode,编译打包,发布appstore,苹果应用商店最佳实践" />
 
 
 
@@ -213,7 +213,7 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">npm最佳实践</h1>
+        <h1 class="font-bold text-3xl text-primary-text">最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
@@ -233,40 +233,100 @@
         
 
         <div class="content">
-            <p>介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践</p>
-<h3 id="发布到私有仓库">发布到私有仓库</h3>
-<p>package.json 配置</p>
-<pre><code class="language-js">directories.bin 指定bin的目录
-directories.lib 指定bin的lib位置
+            <p>2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程</p>
+<h1 id="打包并上传testflight测试">打包并上传testflight测试</h1>
+<h3 id="步骤">步骤</h3>
+<ol>
+<li>rn的代码编译</li>
+<li>xcode编译打包ipa</li>
+<li>上传到testflight</li>
+</ol>
+<h2 id="一-打包ipa">一 打包IPA</h2>
+<h2 id="1-通过xcode-打包ipa">1. 通过xcode 打包ipa</h2>
+<ol>
+<li>
+<p>如xcode打开，请先关闭Xcode</p>
+</li>
+<li>
+<p>命令行执行打包，可以使用fastlane或者利用xcodebuild编写的bash打包脚本</p>
+<blockquote>
+<p>产品环境切换：其实就是编译的js的文件里的api地址切换成哪个环境</p>
+</blockquote>
+<pre><code class="language-bash">#bash的打包脚本
+cd 源代码根目录
+#编译成.app
+xcodebuild  -workspace $projectName.xcworkspace -scheme $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
+#打包成ipa
+xcrun -sdk iphoneos PackageApplication -v $appDir/$projectName.app -o $appDir/$ipaName.ipa
 
-package.json的内容中
-{
-    //指定发布仓库
-  &quot;publishConfig&quot;: {
-      &quot;registry&quot;: &quot;https://registry.npmjs.org/&quot;
-   },
-     //指定引擎版本
-   &quot;engines&quot;: {
-    &quot;node&quot;: &quot;&gt;= 8.0.0&quot;,
-    &quot;npm&quot;: &quot;&gt;= 5.0.0&quot;
-  	},
-    //依赖有多种指定方式,可以是git，也可以是gz,也可以是本地路径
-    &quot;dependencies&quot;: {
-        &quot;local&quot;: &quot;file://Users/xiaoming/example.gz&quot;,
-        &quot;example&quot;: &quot;http://w.cc/visionmedia/example.gz&quot;,
-        &quot;express&quot;: &quot;git://w.cc/visionmedia/express&quot;,
-        &quot;b&quot;:&quot;git+ssh://user@hostname:project.git#commit-ish&quot;,
-        &quot;c&quot;:&quot;git+https://user@hostname:project.git#commit-ish&quot;,
-        &quot;mocha&quot;: &quot;visionmedia/mocha#4727d357ea&quot;
-    }
-}
-
+#通过info命令，可以查看到详细的文档
+info xcodebuild
 </code></pre>
+<pre><code>
+</code></pre>
+</li>
+<li>
+<p>然后打开Xcode,用xcode来打包IPA。</p>
+<blockquote>
+<p>打包IPA</p>
+</blockquote>
+</li>
+<li>
+<p>在打开的xcode里，操作。</p>
+<p><img src="/static/imgs/xcode_archive/image-20211217092242489.png" alt="image-20211217092242489"></p>
+<p><img src="/static/imgs/xcode_archive/image-20211124174634007.png" alt="image-20211124174634007"></p>
+</li>
+<li>
+<p>打包IPA</p>
+<p><em><strong>第一种方法</strong></em>  下面界面是通过archive按钮打包完出现的，也可以直接使用快捷键option+cmd+shift+O(是字母) 调出来</p>
+<p><img src="/static/imgs/xcode_archive/image-20211217092701275.png" alt="image-20211217092701275"></p>
+<p><img src="/static/imgs/xcode_archive/image-20211217092750203.png" alt="image-20211217092750203"></p>
+<p>选择upload 会自动传到testflight，如果选择export可以导出ipa，然后通过transporter（只支持上传testflight）上传到testflight，或者上传的蒲公英（通过蒲公英官方网页，或者蒲公英的专用工具）</p>
+<p><em><strong>第二种方法</strong></em> <strong>注意 app thinning 右边选择框，可能默认是空，右侧有转动图标，需要等待内容出现,然后选择all compatiable,否则打包，上传会失败</strong></p>
+<ol>
+<li>选择development</li>
+</ol>
+<p><img src="/static/imgs/xcode_archive/image-20211124174702427.png" alt="image-20211124174702427"></p>
+</li>
+</ol>
+<blockquote>
+<p><img src="/static/imgs/xcode_archive/image-20211124173316908.png" alt="image-20211124173316908"></p>
+</blockquote>
+<p><strong>注意 app thinning 右边选择框，可能默认是空，右侧有转动图标，需要等待内容出现,然后选择all compatiable,否则打包，上传会失败</strong></p>
+<ol start="2">
+<li>
+<p>打包点击Export按钮，选择导出的文件夹，找到打包ipa的文件</p>
+</li>
+<li>
+<p>通过transporter上传
+![image-20211216194457372](/static/im gimgs/xcode_archive/image-20211216194457372.png)</p>
+</li>
+</ol>
+<h2 id="2-通过命令行打包ipa">2. 通过命令行打包ipa</h2>
+<h2 id="二-上传构建物ipa到testflight或者fir或者pyger蒲公英测试">二 上传构建物IPA到testflight或者fir或者pyger蒲公英测试</h2>
+<ol>
+<li>
+<p>命令行方式上传，如果要上传到蒲公英的，请参照蒲公英的网页工具或命令行工具文档 <a href="https://www.pgyer.com/doc">蒲公英 - 文档中心 (pgyer.com)</a></p>
+</li>
+<li>
+<p>或者下载transporter  苹果系统从app store下载，直接拖动ipa文件到transporter或者点击上传</p>
+</li>
+<li>
+<p>通过 选择第一个，进行打包upload（上传）</p>
+<p><img src="/static/imgs/xcode_archive/image-20211217092130221.png" alt="image-20211217092130221"></p>
+</li>
+</ol>
+<h2 id="三-登录appstoreconnect-httpsappstoreconnectapplecom选择构建物测试">三 登录<a href="https://appstoreconnect.apple.com/">appstoreconnect</a>,选择构建物测试</h2>
+<ol>
+<li>点击testflight的标签</li>
+<li>在左侧菜单栏，点击想要测试的分组，没有，可以添加一个分组</li>
+<li>在分组中配置刚才上传的构建版本，进行测试</li>
+</ol>
         </div>
         
         <div class="my-4">
     
-    <a href="/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#npm,前端打包,前端,最佳实践</a>
+    <a href="/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83appstore%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#ios,xcode,编译打包,发布appstore,苹果应用商店最佳实践</a>
     
 </div>
         
@@ -282,13 +342,13 @@ package.json的内容中
     <div>
         
         <span class="block font-bold">上一页</span>
-        <a href="/posts/security/log4j2-vulnerability-solution/" class="block">Log4j2 原理、漏洞应对与缓解方案</a>
+        <a href="/posts/develop/ios/xcode/xcode-best-practise/" class="block">xcode使用最佳实践</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">下一页</span>
-        <a href="/posts/develop/ios/xcode/xcode-best-practise/" class="block">xcode使用最佳实践</a>
+        <a href="/posts/develop/markdown/emoji-support/" class="block">支持emoji表情</a>
         
     </div>
 </div>
