@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>小明的技术博客</title>
+    <title>技术解读 | 小明的技术博客</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="小明的技术博客,介绍国内外最新的开发、安全、运维等技术">
     <meta name="generator" content="Hugo 0.92.0-DEV" />
@@ -27,14 +27,19 @@
 
     
     
-    <meta property="og:title" content="404 Page not found" />
+      <link href="/news/index.xml" rel="alternate" type="application/rss+xml" title="小明的技术博客" />
+      <link href="/news/index.xml" rel="feed" type="application/rss+xml" title="小明的技术博客" />
+      
+    
+    
+    <meta property="og:title" content="技术解读" />
 <meta property="og:description" content="小明的技术博客,介绍国内外最新的开发、安全、运维等技术" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://h.hao.vin/404.html" /><meta property="og:site_name" content="小明的技术博客" />
+<meta property="og:url" content="http://h.hao.vin/news/" /><meta property="og:site_name" content="小明的技术博客" />
 
-<meta itemprop="name" content="404 Page not found">
+<meta itemprop="name" content="技术解读">
 <meta itemprop="description" content="小明的技术博客,介绍国内外最新的开发、安全、运维等技术"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
+<meta name="twitter:title" content="技术解读"/>
 <meta name="twitter:description" content="小明的技术博客,介绍国内外最新的开发、安全、运维等技术"/>
 
 	
@@ -44,11 +49,13 @@
 
     
 
-  <header>
-    <div class="bg-black">
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://h.hao.vin/images/gohugo-default-sample-hero-image.jpg');">
+    <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/404.html" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/news/" class="f3 fw2 hover-white no-underline white-90 dib">
       
         小明的技术博客
       
@@ -99,17 +106,47 @@
   </div>
 </nav>
 
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+          技术解读
+        </h1>
+        
+      </div>
     </div>
   </header>
 
 
     <main class="pb7" role="main">
       
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
-    </article>
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">News</span>
+    <h1 class="f3 near-black">
+      <a href="/news/security/log4j2-vulnerability-solution/" class="link black dim">
+        Log4j2 原理、漏洞应对与缓解方案
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      log4j漏洞介绍 阿里巴巴长亭科技发现Apache Log4j2反序列化远程代码执行漏洞（CVE-2021-44228），随后更多细节被公开，攻击者可利用该漏洞构造恶意请求，触发远程代码执行， 由于log4j2的异步快速等优异特性，打日志对生产服务影响很小，国内外很多java服务器组件使用了,造成广泛影响。
+解决办法 1. 缓解办法 a. 公司内部防火墙，禁止服务器发起外网链接,需要链接的进行打补丁后,特别的开放 b. 火绒热补丁 火绒热补丁，解决了，有些生产环境的服务器，不方便重启。
+ 借助JVM的Attach机制, 将缓解代码注入运行中的目标JVM进程, 再使用ASM修改JVM中的org.apache.logging.log4j.core.lookup.JndiLookup方法的字节码, 达到无需重启禁用JndiLookup::lookup的目的.
+ 也可以使用长亭科技提供的修复 参照https://github.com/zhangyoufu/log4j2-without-jndi.git
+c. 添加服务器参数,使用下列方法之一   添加 &ldquo;log4j2.component.properties&rdquo; 文件，在里面增加配置 &ldquo;log4j2.formatMsgNoLookups=true&rdquo;
+  添加JVM启动参数 -Dlog4j2.formatMsgNoLookups=true
+  修改系统环境变量: FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS设置为true
+  2. 一劳永逸解决办法 升级系统到log4j2 2.17最新版本 3. 对于安全测试人员，运维人员如何发现公司哪些服务器有log4j2的漏洞,可以使用log4j2的漏洞扫描工具 a. 使用长亭洞鉴（X-Ray）通过模拟浏览器爬虫，对资产进行精细化爬取，以攻击者视角深入挖掘互联网侧暴露的相关组件的Apache Log4j2远程代码执行漏洞
+4. 对于安全测试人员，执行漏洞渗透测试 使用以下代码进行远程代码执行
+# Remote Code Execution (RCE) # Date: 11/12/2021 # Software Link: https://github.com/apache/logging-log4j2 # Version: versions 2.0-beta-9 and 2.14.1. # Tested on: Linux # CVE: CVE-2021-44228 import subprocess import sys import argparse from colorama import Fore, init import subprocess import threading from http.
+    </div>
+  </div>
+</div>
+</div>
+      
+    </section></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
