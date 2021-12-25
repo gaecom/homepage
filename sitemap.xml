@@ -7,6 +7,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/tags/log4j2%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/posts/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -18,11 +28,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/tags/emojimarkdown/</loc>
-    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
