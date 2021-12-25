@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83appstore%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>/tags/fir/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>/tags/ios/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -32,12 +32,32 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/tags/pyger/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/tags/xcode/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/posts/develop/ios/xcode/xcode-best-practise/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/tags/%E5%8F%91%E5%B8%83appstore/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/tags/%E5%8F%91%E5%B8%83%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,7 +72,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/posts/develop/ios/xcode/xcode-archive-ipa/</loc>
+    <lastmod>2021-12-25T19:56:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/tags/%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85/</loc>
     <lastmod>2021-12-25T19:56:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

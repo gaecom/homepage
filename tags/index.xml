@@ -10,20 +10,20 @@
 </copyright>
     <lastBuildDate>Sat, 25 Dec 2021 19:56:07 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ios,xcode,编译打包,发布appstore,苹果应用商店最佳实践</title>
-      <link>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83appstore%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <title>fir</title>
+      <link>/tags/fir/</link>
       <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
       
-      <guid>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83appstore%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>/tags/fir/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ios,xcode,编译打包,最佳实践</title>
-      <link>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <title>ios</title>
+      <link>/tags/ios/</link>
       <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
       
-      <guid>/tags/iosxcode%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>/tags/ios/</guid>
       <description></description>
     </item>
     
@@ -42,6 +42,60 @@
       <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
       
       <guid>/tags/npm%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pyger</title>
+      <link>/tags/pyger/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/pyger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xcode</title>
+      <link>/tags/xcode/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/xcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>发布appstore</title>
+      <link>/tags/%E5%8F%91%E5%B8%83appstore/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/%E5%8F%91%E5%B8%83appstore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>发布苹果应用商店</title>
+      <link>/tags/%E5%8F%91%E5%B8%83%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/%E5%8F%91%E5%B8%83%E8%8B%B9%E6%9E%9C%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>最佳实践</title>
+      <link>/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编译打包</title>
+      <link>/tags/%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/tags/%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85/</guid>
       <description></description>
     </item>
     
