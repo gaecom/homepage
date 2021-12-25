@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>小明的技术博客</title>
+<title>数学支持 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -55,7 +55,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="小明的技术博客">
+  content="使用 KaTeX 支持数学公式">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,32 +63,51 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"技术知识",
-      "item":"/"},{
+      "name":"技术文章",
+      "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"404 Page not found",
-      "item":"/404.html"}]
+      "name":"数学支持",
+      "item":"/posts/math-support/"}]
 }
 </script>
 
 
 
-<meta property="og:title" content="小明的技术博客" />
-<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/math-support/"
+    },
+    "headline": "数学支持 | 小明的技术博客","datePublished": "2020-11-20T22:52:56+08:00",
+    "dateModified": "2020-11-20T22:52:56+08:00",
+    "wordCount":  39 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "\u003cp\u003e使用 KaTeX 支持数学公式\u003c\/p\u003e"
+}
+</script><meta property="og:title" content="数学支持 | 小明的技术博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/404.html" />
+<meta property="og:url" content="/posts/math-support/" />
 
 
 
 
-
-<meta property="og:description" content="小明的技术博客" />
-
+<meta property="og:description" content="使用 KaTeX 支持数学公式" />
 
 
 
@@ -105,9 +124,14 @@
 
 
 
+<meta property="article:published_time" content="2020-11-20T22:52:56&#43;08:00" />
 
 
-<meta property="article:section" content="" />
+<meta property="article:modified_time" content="2020-11-20T22:52:56&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
 
 
 
@@ -129,7 +153,7 @@
     <div id="target"
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">技术文章</a>
         </div>
 
         <div class="flex">
@@ -180,9 +204,91 @@
   <main class="flex-grow pt-16">
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<div class="bg-secondary-bg rounded overflow-hidden mt-12 px-4 py-32 text-center">
-    <span class="text-3xl">404 - Page not found</span>
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">数学支持</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2020-11-20</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
 </div>
+        
+        
+        
+
+        <div class="content">
+            <p>使用 KaTeX 支持数学公式</p>
+<p>你可以输入 $E=mc^2$.</p>
+<p>输入以下比较复杂的等式</p>
+<div>
+\[ \int u \frac{dv}{dx}\, dx=uv-\int \frac{du}{dx}v\,dx \]
+</div>
+<p>矩阵输入支持:</p>
+<div>
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+\begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+\begin{vmatrix} a&b\\c&d \end{vmatrix} \]
+</div>
+<p>等式:</p>
+<div>
+\[\begin{aligned}
+x ={}& a+b+c+{} \\
+&d+e+f+g
+\end{aligned}\]
+</div>
+        </div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/hugo-eureka-theme-guide/" class="block">hugo的eureka主题使用介绍</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/markdown-syntax/" class="block">hugo的markdown的语法介绍</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
 
       </div>
     </div>

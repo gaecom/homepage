@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>小明的技术博客</title>
+<title>支持emoji表情 | 小明的技术博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -55,7 +55,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="小明的技术博客">
+  content="支持文章中嵌入各种方式的emoji表情">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -63,33 +63,50 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"技术知识",
-      "item":"/"},{
+      "name":"技术文章",
+      "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"404 Page not found",
-      "item":"/404.html"}]
+      "name":"支持emoji表情",
+      "item":"/posts/emoji-support/"}]
 }
 </script>
 
 
 
-<meta property="og:title" content="小明的技术博客" />
-<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/emoji-support/"
+    },
+    "headline": "支持emoji表情 | 小明的技术博客","datePublished": "2021-04-05T00:00:00+00:00",
+    "dateModified": "2021-03-05T00:00:00+00:00",
+    "wordCount":  58 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "支持文章中嵌入各种方式的emoji表情"
+}
+</script><meta property="og:title" content="支持emoji表情 | 小明的技术博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/404.html" />
+<meta property="og:url" content="/posts/emoji-support/" />
 
 
 
-
-
-<meta property="og:description" content="小明的技术博客" />
-
-
+<meta property="og:description" content="支持文章中嵌入各种方式的emoji表情" />
 
 
 
@@ -105,9 +122,18 @@
 
 
 
+<meta property="article:published_time" content="2021-04-05T00:00:00&#43;00:00" />
 
 
-<meta property="article:section" content="" />
+<meta property="article:modified_time" content="2021-03-05T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="emoji,markdown" />
+
 
 
 
@@ -129,7 +155,7 @@
     <div id="target"
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">技术文章</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">技术文章</a>
         </div>
 
         <div class="flex">
@@ -180,9 +206,93 @@
   <main class="flex-grow pt-16">
     <div class="pl-scrollbar">
       <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<div class="bg-secondary-bg rounded overflow-hidden mt-12 px-4 py-32 text-center">
-    <span class="text-3xl">404 - Page not found</span>
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">支持emoji表情</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-04-05</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
 </div>
+        
+        
+        
+
+        <div class="content">
+            <p>可以支持各种方式的emoji表情的嵌入</p>
+<p>在站点配置文件中[configuration] 全局启用 <code>enableEmoji</code> to <code>true</code>,然后可以在文章中直接用代码使用</p>
+<pre><code class="language-html">&lt;p&gt;&lt;span class=&quot;nowrap&quot;&gt;&lt;span class=&quot;emojify&quot;&gt;🙈&lt;/span&gt; &lt;code&gt;🙈&lt;/code&gt;&lt;/span&gt;  &lt;span class=&quot;nowrap&quot;&gt;&lt;span class=&quot;emojify&quot;&gt;🙉&lt;/span&gt; &lt;code&gt;🙉&lt;/code&gt;&lt;/span&gt;  &lt;span class=&quot;nowrap&quot;&gt;&lt;span class=&quot;emojify&quot;&gt;🙊&lt;/span&gt; &lt;code&gt;🙊&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+
+The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
+</code></pre>
+<p>效果如下:</p>
+<p><span class="nowrap"><span class="emojify">🙈</span> <code>🙈</code></span>  <span class="nowrap"><span class="emojify">🙉</span> <code>🙉</code></span>  <span class="nowrap"><span class="emojify">🙊</span> <code>🙊</code></span></p>
+<br>
+<p>emoji表情代码参考(<a href="http://www.emoji-cheat-sheet.com/">http://www.emoji-cheat-sheet.com/</a>)</p>
+<hr>
+<p><strong>N.B.</strong> 你也可以通过第三方的字体包等使用表情符号</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">.emoji {
+  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+}</code></pre></div>
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/emojimarkdown/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#emoji,markdown</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">上一页</span>
+        <a href="/posts/security/log4j2-vulnerability-solution/" class="block">Log4j2 原理、漏洞应对与缓解方案</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">下一页</span>
+        <a href="/posts/hugo-eureka-theme-guide/" class="block">hugo的eureka主题使用介绍</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
 
       </div>
     </div>
