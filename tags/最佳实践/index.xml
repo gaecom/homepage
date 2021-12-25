@@ -10,6 +10,15 @@
 </copyright>
     <lastBuildDate>Sat, 25 Dec 2021 19:56:07 +0800</lastBuildDate><atom:link href="/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>npm最佳实践</title>
+      <link>/posts/develop/npm-webpack-vite-yarn/npm-package/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/posts/develop/npm-webpack-vite-yarn/npm-package/</guid>
+      <description>&lt;p&gt;介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>xcode使用最佳实践</title>
       <link>/posts/develop/ios/xcode/xcode-best-practise/</link>
       <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
