@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rtsp流地址 on 小明的技术博客</title>
+    <link>/tags/rtsp%E6%B5%81%E5%9C%B0%E5%9D%80/</link>
+    <description>Recent content in rtsp流地址 on 小明的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt; and &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 25 Dec 2021 19:56:07 +0800</lastBuildDate><atom:link href="/tags/rtsp%E6%B5%81%E5%9C%B0%E5%9D%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用的各大厂商监控摄像头的rtsp的流地址以及获取方法</title>
+      <link>/media/camera-default-rtsp-stream-urls/</link>
+      <pubDate>Sat, 25 Dec 2021 19:56:07 +0800</pubDate>
+      
+      <guid>/media/camera-default-rtsp-stream-urls/</guid>
+      <description>&lt;p&gt;监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

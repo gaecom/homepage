@@ -8,13 +8,31 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt; and &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>支持emoji表情</title>
+      <link>/develop/markdown/emoji-support/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/develop/markdown/emoji-support/</guid>
+      <description>&lt;p&gt;可以支持各种方式的emoji表情的嵌入&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数学支持</title>
+      <link>/develop/markdown/math-support/</link>
+      <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
+      
+      <guid>/develop/markdown/math-support/</guid>
+      <description>&lt;p&gt;使用 KaTeX 支持数学公式&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>hugo的markdown的语法介绍</title>
-      <link>/posts/develop/markdown/markdown-syntax/</link>
+      <link>/develop/markdown/markdown-syntax/</link>
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/develop/markdown/markdown-syntax/</guid>
+      <guid>/develop/markdown/markdown-syntax/</guid>
       <description></description>
     </item>
     
