@@ -8,7 +8,17 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt; and &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Sat, 25 Dec 2021 19:56:07 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>logback最新高危漏洞 原理、漏洞应对与缓解方案</title>
+      <link>/security/logback-vulnerability-reason-solution/</link>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/security/logback-vulnerability-reason-solution/</guid>
+      <description>&lt;h2 id=&#34;log4j漏洞介绍&#34;&gt;log4j漏洞介绍&lt;/h2&gt;
+&lt;p&gt;前段时间长亭科技发现log4j2的高危漏洞,来自logback的新闻以及CVE数据，发现logback特别是logback-classic中也有可以利用JNDI进行Arbitrary Code Execution 执行漏洞&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Log4j2 原理、漏洞应对与缓解方案</title>
       <link>/security/log4j2-vulnerability-solution/</link>
