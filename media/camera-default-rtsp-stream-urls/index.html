@@ -1,277 +1,108 @@
-<!DOCTYPE html>
-<html lang='zh' ><meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
+<!doctype html><html lang=zh><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta charset=utf-8>
+<link rel=icon href=/static/imgs/logo/logo.png>
 <title>常用的各大厂商监控摄像头的rtsp的流地址以及获取方法 | 小明的技术博客</title>
-
-<meta name="description" content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
-<link rel="stylesheet" href="/css/eureka.min.css">
-<script defer src="/js/eureka.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
-   crossorigin></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
-     crossorigin></script>
-
-
-
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
-  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-    });
-  });
-</script>
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
-  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
-
-<meta name="description"
-  content="监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"多媒体技术",
-      "item":"/media/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"常用的各大厂商监控摄像头的rtsp的流地址以及获取方法",
-      "item":"/media/camera-default-rtsp-stream-urls/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "/media/camera-default-rtsp-stream-urls/"
-    },
-    "headline": "常用的各大厂商监控摄像头的rtsp的流地址以及获取方法 | 小明的技术博客","datePublished": "2021-12-25T19:56:07+08:00",
-    "dateModified": "2021-12-25T19:56:07+08:00",
-    "wordCount":  166 ,
-    "publisher": {
-        "@type": "小明的技术博客",
-        "name": "ifa6",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "/images/icon.png"
-        }
-        },
-    "description": "\u003cp\u003e监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法\u003c\/p\u003e"
-}
-</script><meta property="og:title" content="常用的各大厂商监控摄像头的rtsp的流地址以及获取方法 | 小明的技术博客" />
-<meta property="og:type" content="article" />
-
-
+<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
+<meta name=description content="监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"多媒体技术","item":"/media/"},{"@type":"ListItem","position":2,"name":"常用的各大厂商监控摄像头的rtsp的流地址以及获取方法","item":"/media/camera-default-rtsp-stream-urls/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/media/camera-default-rtsp-stream-urls/"},"headline":"常用的各大厂商监控摄像头的rtsp的流地址以及获取方法 | 小明的技术博客","datePublished":"2021-12-25T19:56:07+08:00","dateModified":"2021-12-25T19:56:07+08:00","wordCount":166,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003e监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法\u003c\/p\u003e"}</script><meta property="og:title" content="常用的各大厂商监控摄像头的rtsp的流地址以及获取方法 | 小明的技术博客">
+<meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
-
-
-<meta property="og:url" content="/media/camera-default-rtsp-stream-urls/" />
-
-
-
-
-<meta property="og:description" content="监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法" />
-
-
-
-
-<meta property="og:locale" content="zh" />
-
-
-
-
-<meta property="og:site_name" content="小明的技术博客" />
-
-
-
-
-
-
-<meta property="article:published_time" content="2021-12-25T19:56:07&#43;08:00" />
-
-
-<meta property="article:modified_time" content="2021-12-25T19:56:07&#43;08:00" />
-
-
-
-<meta property="article:section" content="media" />
-
-
-<meta property="article:tag" content="rtsp url" />
-
-<meta property="article:tag" content="监控摄像头" />
-
-<meta property="article:tag" content="rtsp流地址" />
-
-<meta property="article:tag" content="视频推流" />
-
-<meta property="article:tag" content="视频转码" />
-
-
-
-
-
+<meta property="og:url" content="/media/camera-default-rtsp-stream-urls/">
+<meta property="og:description" content="监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法">
+<meta property="og:locale" content="zh">
+<meta property="og:site_name" content="小明的技术博客">
+<meta property="article:published_time" content="2021-12-25T19:56:07+08:00">
+<meta property="article:modified_time" content="2021-12-25T19:56:07+08:00">
+<meta property="article:section" content="media">
+<meta property="article:tag" content="rtsp url">
+<meta property="article:tag" content="监控摄像头">
+<meta property="article:tag" content="rtsp流地址">
+<meta property="article:tag" content="视频推流">
+<meta property="article:tag" content="视频转码">
 <body class="flex flex-col min-h-screen">
-  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
-    <div class="w-full max-w-screen-xl mx-auto"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="/" class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div id="target"
-        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
-        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/ai/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">AI</a>
-            <a href="/meta/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">元宇宙</a>
-            <a href="/blockchain/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">区块链</a>
-            <a href="/media/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">多媒体技术</a>
-            <a href="/security/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">安全</a>
-            <a href="/develop/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">开发</a>
-        </div>
-
-        <div class="flex">
-            <div class="relative pt-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
-                </div>
-                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
-
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/ai/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">AI</a>
+<a href=/meta/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">元宇宙</a>
+<a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">区块链</a>
+<a href=/media/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">多媒体技术</a>
+<a href=/security/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">安全</a>
+<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">开发</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
 </nav>
-<script>
-    
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
-    });
-</script>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
 </div>
-  </header>
-  <main class="flex-grow pt-16">
-    <div class="pl-scrollbar">
-      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-
-
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-    <div
-        class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">常用的各大厂商监控摄像头的rtsp的流地址以及获取方法</h1>
-        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2021-12-25</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
-    </div>
-    
-    
-
-    
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">常用的各大厂商监控摄像头的rtsp的流地址以及获取方法</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-12-25</span>
 </div>
-        
-        
-        
-
-        <div class="content">
-            <p>监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法</p>
-<h3 id="九安监控摄像头默认的rtsp流地址">九安监控摄像头默认的rtsp流地址</h3>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>1分钟阅读时长</span>
+</div>
+</div>
+<div class=content>
+<p>监控摄像头的视频转码推流，经常要获取rtsp的流地址，下面是收集的常用的各大厂商监控摄像头的rtsp的流地址以及获取方法</p>
+<h3 id=九安监控摄像头默认的rtsp流地址>九安监控摄像头默认的rtsp流地址</h3>
 <pre><code>RTSP地址：rtsp://IP:port（website port）/ch0_0.264（主码流）
 rtsp://IP:port（website port）/ch0_1.264（子码流）
 </code></pre>
-<h3 id="技威yoosee-监控摄像头默认的rtsp流地址">技威/YOOSEE 监控摄像头默认的rtsp流地址</h3>
+<h3 id=技威yoosee-监控摄像头默认的rtsp流地址>技威/YOOSEE 监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：DHCP 用户名admin 密码123
 RTSP地址：主码流：rtsp://IPadr:554/onvif1
 次码流：rtsp://IPadr:554/onvif2
 onvif端口是5000
 设备发现的端口是3702
 </code></pre>
-<h3 id="华为v380-监控摄像头默认的rtsp流地址">华为V380 监控摄像头默认的rtsp流地址</h3>
+<h3 id=华为v380-监控摄像头默认的rtsp流地址>华为V380 监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：DHCP 用户名admin 密码空/admin
 onvif端口8899
 
@@ -279,7 +110,7 @@ RTSP地址：主码流rtsp://ip//live/ch00_1
 
 子码流rtsp://ip//live/ch00_0
 </code></pre>
-<h3 id="海康威视监控摄像头默认的rtsp流地址">海康威视监控摄像头默认的rtsp流地址</h3>
+<h3 id=海康威视监控摄像头默认的rtsp流地址>海康威视监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：192.168.1.64/DHCP 用户名admin 密码自己设
 
 端口：“HTTP 端口”（默认为 80）、“RTSP 端口”（默认为 554）、“HTTPS 端 口”（默认 443）和“服务端口”（默认 8000），ONVIF端口 80。
@@ -299,7 +130,7 @@ rtsp://admin:[12345@192.0.0.64](mailto:12345@192.0.0.64):554/h264/ch1/main/av_st
 子码流：
 rtsp://admin:[12345@192.0.0.64](mailto:12345@192.0.0.64)/mpeg4/ch1/sub/av_stream
 </code></pre>
-<h3 id="大华监控摄像头默认的rtsp流地址">大华监控摄像头默认的rtsp流地址</h3>
+<h3 id=大华监控摄像头默认的rtsp流地址>大华监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：192.168.1.108 用户名/密码：admin/admin
 
 端口：TCP 端口 37777/UDP 端口 37778/http 端口 80/RTSP 端口号默认为 554/HTTPs 443/ONVIF 功能默认为关闭，端口80
@@ -340,23 +171,23 @@ RTSP地址：主码流地址:rtsp://192.168.0.123:554/mpeg4
 子码流 rtsp://admin:[123456@192.168.0.123](mailto:123456@192.168.0.123):554/mpeg4cif
 图片抓拍地址：http://ip/snapshot.cgi
 </code></pre>
-<h3 id="中维尚维监控摄像头默认的rtsp流地址">中维/尚维监控摄像头默认的rtsp流地址</h3>
+<h3 id=中维尚维监控摄像头默认的rtsp流地址>中维/尚维监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：DHCP 默认用户名admin 默认密码 空
 RTSP地址：rtsp://0.0.0.0:8554/live1.264（次码流）
 rtsp://0.0.0.0:8554/live0.264 (主码流)
 
 </code></pre>
-<h3 id="宇视监控摄像头默认的rtsp流地址">宇视监控摄像头默认的rtsp流地址</h3>
+<h3 id=宇视监控摄像头默认的rtsp流地址>宇视监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址： 192.168.0.13/DHCP 默认用户名 admin 和默认密码 123456
 端口：HTTP 80/RTSP 554/HTTPS 110(443)/onvif端口 80
 RTSP地址：rtsp://用户名:密码@ip:端口号/video123 123对应3个码流
 </code></pre>
-<h3 id="天地伟业监控摄像头默认的rtsp流地址">天地伟业监控摄像头默认的rtsp流地址</h3>
+<h3 id=天地伟业监控摄像头默认的rtsp流地址>天地伟业监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：192.168.1.2 用户名“Admin”、密码“1111”
 onvif端口号“8080”
 RTSP地址：rtsp：//192.168.1.2
 </code></pre>
-<h3 id="巨龙jvt监控摄像头默认的rtsp流地址">巨龙/JVT监控摄像头默认的rtsp流地址</h3>
+<h3 id=巨龙jvt监控摄像头默认的rtsp流地址>巨龙/JVT监控摄像头默认的rtsp流地址</h3>
 <pre><code>默认IP地址：192.168.1.88 默认用户名 admin 默认密码admin
 RTSP地址：
 主码流地址:rtsp://IP地址/av0_0
@@ -365,56 +196,25 @@ onvif端口 2000
 图片抓拍地址：http://ip/capture/webCapture.jpg?channel=1&amp;FTpsend=0&amp;checkinfo=0
 (http://ip/cgi-bin/images_cgi?channel=1&amp;user=admin&amp;pwd=admin)
 </code></pre>
-        </div>
-        
-        <div class="my-4">
-    
-    <a href="/tags/rtsp-url/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#rtsp url</a>
-    
-    <a href="/tags/%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#监控摄像头</a>
-    
-    <a href="/tags/rtsp%E6%B5%81%E5%9C%B0%E5%9D%80/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#rtsp流地址</a>
-    
-    <a href="/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#视频推流</a>
-    
-    <a href="/tags/%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#视频转码</a>
-    
 </div>
-        
-        
-        
-
-
-        
-        
-        
-        
-        
-
-
-
-    </div>
-    
-
-    
-    
+<div class=my-4>
+<a href=/tags/rtsp-url/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#rtsp url</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#监控摄像头</a>
+<a href=/tags/rtsp%E6%B5%81%E5%9C%B0%E5%9D%80/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#rtsp流地址</a>
+<a href=/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#视频推流</a>
+<a href=/tags/%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#视频转码</a>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', ()=>{
-        hljs.initHighlightingOnLoad();
-    })
-</script>
-
-      </div>
-    </div>
-    
-  </main>
-  <footer class="pl-scrollbar">
-    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-  <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://h.hao.vin/">hao.vin</a> and <a href="https://h.hao.vin/">hao.vin</a>
- &middot;  
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://h.hao.vin/>hao.vin</a> and <a href=https://h.hao.vin/>hao.vin</a>
+&#183;
 </div></div>
-  </footer>
+</footer>
 </body>
-
 </html>

@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI on 小明的技术博客</title>
-    <link>/ai/</link>
-    <description>Recent content in AI on 小明的技术博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt; and &lt;a href=&#34;https://h.hao.vin/&#34;&gt;hao.vin&lt;/a&gt;
-</copyright><atom:link href="/ai/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on 小明的技术博客</title><link>/ai/</link><description>Recent content in AI on 小明的技术博客</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2021 &lt;a href="https://h.hao.vin/">hao.vin&lt;/a> and &lt;a href="https://h.hao.vin/">hao.vin&lt;/a></copyright><atom:link href="/ai/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
