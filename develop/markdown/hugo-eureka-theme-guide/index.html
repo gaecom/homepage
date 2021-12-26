@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
 <meta charset=utf-8>
-<title>hugo的eureka主题使用介绍 | 小明的技术博客</title>
+<title>hugo以及hugo的eureka主题使用介绍 | 小明的技术博客</title>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -17,13 +17,13 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="支持画图表、表格、数学公司的markdown语法">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"hugo的eureka主题使用介绍","item":"/develop/markdown/hugo-eureka-theme-guide/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":64,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003ch2 id=\u0022支持画图表表格数学公司的markdown语法\u0022\u003e支持画图表、表格、数学公司的markdown语法\u003c\/h2\u003e"}</script><meta property="og:title" content="hugo的eureka主题使用介绍 | 小明的技术博客">
+<meta name=description content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"hugo以及hugo的eureka主题使用介绍","item":"/develop/markdown/hugo-eureka-theme-guide/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo以及hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":71,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c\/p\u003e"}</script><meta property="og:title" content="hugo以及hugo的eureka主题使用介绍 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/markdown/hugo-eureka-theme-guide/">
-<meta property="og:description" content="支持画图表、表格、数学公司的markdown语法">
+<meta property="og:description" content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
 <meta property="article:published_time" content="2021-03-31T13:11:22+08:00">
@@ -72,7 +72,7 @@
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
 <div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-<h1 class="font-bold text-3xl text-primary-text">hugo的eureka主题使用介绍</h1>
+<h1 class="font-bold text-3xl text-primary-text">hugo以及hugo的eureka主题使用介绍</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
@@ -84,6 +84,13 @@
 </div>
 </div>
 <div class=content>
+<p>hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践</p>
+<h2 id=配置logo和toc>配置logo和toc</h2>
+<ol>
+<li>toc 在文章的内容头,配置toc等于true,在config/_default/config.yaml配置(优先级大于根目录的config.toml)层级,从什么标题开始进行tableOfContents</li>
+<li>在params中配置logo的相对目录,logo的位置相对于根目录的assets目录</li>
+<li>变量和函数用法参照 <a href=https://gohugo.io/content-management/organization/>https://gohugo.io/content-management/organization/</a></li>
+</ol>
 <h2 id=支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</h2>
 <h3 id=支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</h3>
 <pre><code class=language-html>&lt;div class=&quot;mermaid&quot;&gt;
@@ -134,6 +141,7 @@ B -->|tcp_456| D[Server2]
 <div class="sticky-toc hidden lg:block px-6 pb-6">
 <nav id=TableOfContents>
 <ul>
+<li><a href=#配置logo和toc>配置logo和toc</a></li>
 <li><a href=#支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</a>
 <ul>
 <li><a href=#支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</a></li>
