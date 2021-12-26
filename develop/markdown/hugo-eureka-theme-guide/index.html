@@ -19,7 +19,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"hugo以及hugo的eureka主题使用介绍","item":"/develop/markdown/hugo-eureka-theme-guide/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo以及hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":71,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c\/p\u003e"}</script><meta property="og:title" content="hugo以及hugo的eureka主题使用介绍 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo以及hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":93,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c\/p\u003e"}</script><meta property="og:title" content="hugo以及hugo的eureka主题使用介绍 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/markdown/hugo-eureka-theme-guide/">
@@ -85,12 +85,27 @@
 </div>
 <div class=content>
 <p>hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践</p>
-<h2 id=配置logo和toc>配置logo和toc</h2>
+<h2 id=hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</h2>
+<h3 id=配置logo和toc>配置logo和toc</h3>
 <ol>
 <li>toc 在文章的内容头,配置toc等于true,在config/_default/config.yaml配置(优先级大于根目录的config.toml)层级,从什么标题开始进行tableOfContents</li>
 <li>在params中配置logo的相对目录,logo的位置相对于根目录的assets目录</li>
 <li>变量和函数用法参照 <a href=https://gohugo.io/content-management/organization/>https://gohugo.io/content-management/organization/</a></li>
 </ol>
+<h3 id=加快加载速度>加快加载速度</h3>
+<h4 id=1-配置压缩最佳实践>1. 配置压缩最佳实践</h4>
+<p>在config.yaml中增加</p>
+<pre><code class=language-yaml>minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+
+</code></pre>
+<h4 id=2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</h4>
 <h2 id=支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</h2>
 <h3 id=支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</h3>
 <pre><code class=language-html>&lt;div class=&quot;mermaid&quot;&gt;
@@ -141,7 +156,17 @@ B -->|tcp_456| D[Server2]
 <div class="sticky-toc hidden lg:block px-6 pb-6">
 <nav id=TableOfContents>
 <ul>
+<li><a href=#hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</a>
+<ul>
 <li><a href=#配置logo和toc>配置logo和toc</a></li>
+<li><a href=#加快加载速度>加快加载速度</a>
+<ul>
+<li><a href=#1-配置压缩最佳实践>1. 配置压缩最佳实践</a></li>
+<li><a href=#2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href=#支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</a>
 <ul>
 <li><a href=#支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</a></li>
