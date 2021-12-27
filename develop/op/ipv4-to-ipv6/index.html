@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
 <meta charset=utf-8>
-<title>小明的技术博客</title>
+<title>ipv4系统支持ipv6改造 | 小明的技术博客</title>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -16,17 +16,22 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
-<meta property="og:title" content="小明的技术博客">
-<meta property="og:type" content="website">
+<meta name=description content="ipv4系统支持ipv6改造">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"ipv4系统支持ipv6改造","item":"/develop/op/ipv4-to-ipv6/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/op/ipv4-to-ipv6/"},"headline":"ipv4系统支持ipv6改造 | 小明的技术博客","datePublished":"2021-12-27T00:00:00+00:00","dateModified":"2021-12-27T00:00:00+00:00","wordCount":22,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"ipv4系统支持ipv6改造"}</script><meta property="og:title" content="ipv4系统支持ipv6改造 | 小明的技术博客">
+<meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
-<meta property="og:url" content="/">
-<meta property="og:description" content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<meta property="og:url" content="/develop/op/ipv4-to-ipv6/">
+<meta property="og:description" content="ipv4系统支持ipv6改造">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
-<meta property="og:updated_time" content="2021-12-27T00:00:00+00:00">
-<meta property="article:section" content>
-<link rel=alternate type=application/rss+xml href=/index.xml title=小明的技术博客>
+<meta property="article:published_time" content="2021-12-27T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-12-27T00:00:00+00:00">
+<meta property="article:section" content="develop">
+<meta property="article:tag" content="ipv6">
+<meta property="article:tag" content="ipv4">
+<meta property="article:tag" content="ipv6改造">
+<meta property="article:tag" content="运维">
 <body class="flex flex-col min-h-screen">
 <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
 <div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
@@ -42,7 +47,7 @@
 <a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">区块链</a>
 <a href=/media/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">多媒体技术</a>
 <a href=/security/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">安全</a>
-<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">开发</a>
+<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">开发</a>
 </div>
 <div class=flex>
 <div class="relative pt-4 md:pt-0">
@@ -66,42 +71,11 @@
 </div>
 </header>
 <main class="flex-grow pt-16">
-<div class="pl-scrollbar bg-primary-bg">
-<div class="max-w-screen-xl mx-auto">
-<div id=pages class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
-<h2 class="font-bold text-3xl my-4">开发</h2>
-<div class="overflow-hidden divide-y">
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/android/gradle-compile-avoid-firewall/ class="font-bold text-xl hover:text-eureka">gradle编译，因仓库地址被墙或不存在,导致编译慢或无法编译问题</a>
-</div>
-<div class=content>
-gradle编译，因仓库地址被墙或不存在,导致编译慢或无法编译问题
-</div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2021-12-27</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>2分钟阅读时长</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/op/ipv4-to-ipv6/ class="font-bold text-xl hover:text-eureka">ipv4系统支持ipv6改造</a>
-</div>
-<div class=content>
-ipv4系统支持ipv6改造
-</div>
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">ipv4系统支持ipv6改造</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
@@ -112,90 +86,70 @@ ipv4系统支持ipv6改造
 <span>1分钟阅读时长</span>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/npm-webpack-vite-yarn/npm-package/ class="font-bold text-xl hover:text-eureka">npm最佳实践</a>
-</div>
 <div class=content>
-介绍npm参数介绍、打包、发布、测试、脚本、镜像配置等最佳实践
+<p>机房传统的ipv4线路,支持ipv6改造,由支持ipv6和ipv4双协议，逐步过度到ipv6协议</p>
+<h2 id=改造方案>改造方案</h2>
+<ol>
+<li>全部ipv6线路改造</li>
+<li>部分ipv6，加ipv6的NAT代理，<strong>网络(ipv6)→(dns64)运营商</strong> ，实现NAT双线并存的改造，逐步向全ipv6过度，互联网的入口进行ipv6改造，内部走ipv4</li>
+</ol>
+<p><img src=/static/imgs/ipv4-to-ipv6/ipv6-nat64.png alt=ipv6到ipv6改造></p>
+<p>梳理需要改造的节点以及工作</p>
+<ol>
+<li>向运营商申请IPV6地址，大概需要1周左右时间</li>
+<li><strong>网络出口部署NAT64设备，出口设备支持ipv4和ipv6双协议(ipv6)</strong> ，<strong>nat64 nat的ipv6到ipv4请求，ipv4到ipv6响应</strong></li>
+<li><strong>dns64增加AAAA记录</strong></li>
+<li><strong>机房(ipv6地址+ipv6链路)</strong></li>
+<li><strong>主机(ipv6支持)</strong></li>
+<li><strong>操作系统</strong> 改造支持ipv6</li>
+<li>系统的组件</li>
+</ol>
+<blockquote>
+<p>底层基础网络库的支持，软件运行所在的操作系统的linux，windows等的基础网络库</p>
+</blockquote>
+<ol start=8>
+<li>语言运行时的封装的网络库</li>
+</ol>
+<p>比如java的net，go的net，php的socket，curl等网络库</p>
+<ol start=9>
+<li>应用服务的客户端和服务端支持</li>
+</ol>
+<blockquote>
+<p>客户端需要支持ipv6的连接，服务端要支持ipv6连接，同时代码逻辑对ipv6地址要正确的处理，如果全部ipv6会导致IPv6 only客户端出现问题，利用使用硬件或外部代理DNS解析.</p>
+</blockquote>
 </div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2021-12-25</span>
+<div class=my-4>
+<a href=/tags/ipv6/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#ipv6</a>
+<a href=/tags/ipv4/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#ipv4</a>
+<a href=/tags/ipv6%E6%94%B9%E9%80%A0/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#ipv6改造</a>
+<a href=/tags/%E8%BF%90%E7%BB%B4/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#运维</a>
 </div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>1分钟阅读时长</span>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">上一页</span>
+<a href=/develop/android/gradle-compile-avoid-firewall/ class=block>gradle编译，因仓库地址被墙或不存在,导致编译慢或无法编译问题</a>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/ios/xcode/xcode-best-practise/ class="font-bold text-xl hover:text-eureka">xcode使用最佳实践</a>
-</div>
-<div class=content>
-介绍ios开发中关于xcode工具使用、开发、打包、测试、条件编译、发布到应用市场等使用最佳实践
-</div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2021-12-25</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>6分钟阅读时长</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/ios/xcode/xcode-archive-ipa/ class="font-bold text-xl hover:text-eureka">最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程</a>
-</div>
-<div class=content>
-2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程
-</div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2021-12-25</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>1分钟阅读时长</span>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">下一页</span>
+<a href=/develop/npm-webpack-vite-yarn/npm-package/ class=block>npm最佳实践</a>
 </div>
 </div>
 </div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#改造方案>改造方案</a></li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
 </div>
 </div>
-</div>
-<div class="pt-2 hover:text-eureka">
-<a href=/develop/ class=font-semibold>阅读更多</a>
-<i class="fas fa-caret-right ml-1"></i>
-</div>
-</div>
-</div>
-</div>
-<div class="pl-scrollbar bg-primary-bg">
-<div class="max-w-screen-xl mx-auto">
-<div id=blank class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
-<div style=text-align:center>
-<p></p>
-</div>
-</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
 </div>
 </div>
 </main>
