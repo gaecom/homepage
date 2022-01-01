@@ -18,7 +18,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="docker使用技巧、注意事项、实践总结、安全实践">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"docker使用最佳实践","item":"/develop/docker/docker-best-practise/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/docker/docker-best-practise/"},"headline":"docker使用最佳实践 | 小明的技术博客","datePublished":"2022-01-01T00:00:00+00:00","dateModified":"2022-01-01T00:00:00+00:00","wordCount":110,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"docker使用技巧、注意事项、实践总结、安全实践"}</script><meta property="og:title" content="docker使用最佳实践 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/docker/docker-best-practise/"},"headline":"docker使用最佳实践 | 小明的技术博客","datePublished":"2022-01-01T00:00:00+00:00","dateModified":"2022-01-01T00:00:00+00:00","wordCount":177,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"docker使用技巧、注意事项、实践总结、安全实践"}</script><meta property="og:title" content="docker使用最佳实践 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/docker/docker-best-practise/">
@@ -136,17 +136,49 @@ mac下配置$HOME/.docker/config.json
     &quot;log-opts&quot;:{&quot;max-size&quot;:&quot;500m&quot;, &quot;max-file&quot;:&quot;3&quot;}
 }
 </code></pre>
+<h3 id=使用copy和add区别>使用COPY和ADD区别</h3>
+<blockquote>
+<p>ADD 除了COPY存粹的拷贝本地文件含义，还有拷贝外部文件如http://，进行拷贝后文件的解压等
+COPY 单纯的拷贝文件</p>
+</blockquote>
+<h3 id=entrypointsh和cmd使用最佳实践>entrypoint.sh和CMD使用最佳实践</h3>
+<p>使用CMD: 最好使用数组,使用字符串的话，docker会使用bash来启动命令行，导致无法正确处理外部信号，因为shell不会把信号传递给子进程
+ENTRYPOINT: 无法通过dockerfile覆盖，只能增加参数，但可以通过docker run &ndash;entrypoint 重新指定，而CMD可以在dockerfile中覆盖父dockerfile的CMD指令</p>
+<pre><code class=language-Dockerfile>#使用数组、
+CMD [&quot;pm2&quot;, &quot;start&quot;, &quot;app&quot;]
+ENTRYPOINT [&quot;pm2&quot;, &quot;start&quot;, &quot;app&quot;]
+</code></pre>
+<h3 id=最好一个镜像一个进程>最好一个镜像一个进程</h3>
+<blockquote>
+<p>单进程容易扩展、打日志、打补丁和调试</p>
+</blockquote>
+<h3 id=使用dockerignore>使用.dockerignore</h3>
+<p>当要忽略添加文件到镜像中时候</p>
+<pre><code class=language-Dockerfile>docker build -t abc .
+</code></pre>
 <h2 id=减少镜像的大小>减少镜像的大小</h2>
 <ol>
 <li>使用slim，alpine等减少镜像大小</li>
 <li>尽量使用多阶段编译，减少镜像层数</li>
 <li>删除不必要的系统运行工具</li>
 </ol>
-<h3 id=使用copy和add区别>使用COPY和ADD区别</h3>
-<blockquote>
-<p>ADD 除了COPY存粹的拷贝本地文件含义，还有拷贝外部文件，进行拷贝后文件的解压等
-COPY 单纯的拷贝文件</p>
-</blockquote>
+<h2 id=docker监测>docker监测</h2>
+<ol>
+<li>增加健康监测指令</li>
+</ol>
+<pre><code class=language-Dockerfile>HEALTHCHECK CMD curl --fail http://localhost:4243 || exit 1
+
+</code></pre>
+<ol start=2>
+<li>docker-compose增加监测</li>
+</ol>
+<pre><code class=language-yaml> healthcheck:
+      test: curl --fail http://localhost:4243 || exit 1
+      timeout: 15s
+      interval: 15s
+      start_period: 15s
+      retries: 5
+</code></pre>
 <h2 id=安全>安全</h2>
 <h3 id=不要使用root权限>不要使用root权限</h3>
 <blockquote>
@@ -158,6 +190,19 @@ sudo会先创建sudo进程，然后该进程作为父进程去创建子进程，
 <pre><code class=language-Dockerfile>#使用普通用户
 user commonUser
 </code></pre>
+<h3 id=不要把密码保存到dockerfile中>不要把密码保存到dockerfile中</h3>
+<blockquote>
+<p>或者密码文件存放到镜像中,可以通过环境变量指定,或者编译参数&ndash;build-arg指定</p>
+</blockquote>
+<pre><code class=language-sh>docker run --detach --env &quot;DB_PWD=password&quot; php
+</code></pre>
+<pre><code class=language-Dockerfile>ENV DB_PWD abcd
+</code></pre>
+<h3 id=使用hadolint来检查扫描自己的dockerfile减少错误漏洞等保证安全>使用hadolint来检查扫描自己的Dockerfile，减少错误、漏洞等保证安全</h3>
+<blockquote>
+<p>还可以用Snyk,Clair,Trivy</p>
+</blockquote>
+<h2 id=进行cpumem磁盘等的资源限制>进行cpu、mem、磁盘等的资源限制</h2>
 </div>
 <div class=my-4>
 <a href=/tags/docker/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#docker</a>
@@ -186,18 +231,22 @@ user commonUser
 <li><a href=#停留在某个构建阶段>停留在某个构建阶段</a></li>
 <li><a href=#禁止docker自启动>禁止docker自启动</a></li>
 <li><a href=#配置docker的镜像加速docker的镜像拉取>配置docker的镜像，加速docker的镜像拉取</a></li>
-</ul>
-</li>
-<li><a href=#减少镜像的大小>减少镜像的大小</a>
-<ul>
 <li><a href=#使用copy和add区别>使用COPY和ADD区别</a></li>
+<li><a href=#entrypointsh和cmd使用最佳实践>entrypoint.sh和CMD使用最佳实践</a></li>
+<li><a href=#最好一个镜像一个进程>最好一个镜像一个进程</a></li>
+<li><a href=#使用dockerignore>使用.dockerignore</a></li>
 </ul>
 </li>
+<li><a href=#减少镜像的大小>减少镜像的大小</a></li>
+<li><a href=#docker监测>docker监测</a></li>
 <li><a href=#安全>安全</a>
 <ul>
 <li><a href=#不要使用root权限>不要使用root权限</a></li>
+<li><a href=#不要把密码保存到dockerfile中>不要把密码保存到dockerfile中</a></li>
+<li><a href=#使用hadolint来检查扫描自己的dockerfile减少错误漏洞等保证安全>使用hadolint来检查扫描自己的Dockerfile，减少错误、漏洞等保证安全</a></li>
 </ul>
 </li>
+<li><a href=#进行cpumem磁盘等的资源限制>进行cpu、mem、磁盘等的资源限制</a></li>
 </ul>
 </nav>
 </div>
