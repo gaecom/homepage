@@ -16,13 +16,13 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="docker使用技巧、注意事项、实践总结">
+<meta name=description content="docker使用技巧、注意事项、实践总结、安全实践">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"docker使用最佳实践","item":"/develop/docker/docker-best-practise/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/docker/docker-best-practise/"},"headline":"docker使用最佳实践 | 小明的技术博客","datePublished":"2022-01-01T00:00:00+00:00","dateModified":"2022-01-01T00:00:00+00:00","wordCount":91,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"docker使用技巧、注意事项、实践总结"}</script><meta property="og:title" content="docker使用最佳实践 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/docker/docker-best-practise/"},"headline":"docker使用最佳实践 | 小明的技术博客","datePublished":"2022-01-01T00:00:00+00:00","dateModified":"2022-01-01T00:00:00+00:00","wordCount":110,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"docker使用技巧、注意事项、实践总结、安全实践"}</script><meta property="og:title" content="docker使用最佳实践 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/docker/docker-best-practise/">
-<meta property="og:description" content="docker使用技巧、注意事项、实践总结">
+<meta property="og:description" content="docker使用技巧、注意事项、实践总结、安全实践">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
 <meta property="article:published_time" content="2022-01-01T00:00:00+00:00">
@@ -127,7 +127,7 @@ CMD [&quot;./app&quot;] ·
 配置docker
 linux下配置 /etc/docker/daemon.json
 mac下配置$HOME/.docker/config.json
-也可以通过<img src=/static/imgs/docker-registry-setting.png alt="图 3"></p>
+也可以通过<img src=/imgs/2022-01/docker-registry-setting.png alt="图 4"></p>
 </blockquote>
 <p>docker for mac/windows 的ui的preferences进行配置</p>
 <pre><code class=language-json>{
@@ -136,7 +136,28 @@ mac下配置$HOME/.docker/config.json
     &quot;log-opts&quot;:{&quot;max-size&quot;:&quot;500m&quot;, &quot;max-file&quot;:&quot;3&quot;}
 }
 </code></pre>
-<h3 id=heading></h3>
+<h2 id=减少镜像的大小>减少镜像的大小</h2>
+<ol>
+<li>使用slim，alpine等减少镜像大小</li>
+<li>尽量使用多阶段编译，减少镜像层数</li>
+<li>删除不必要的系统运行工具</li>
+</ol>
+<h3 id=使用copy和add区别>使用COPY和ADD区别</h3>
+<blockquote>
+<p>ADD 除了COPY存粹的拷贝本地文件含义，还有拷贝外部文件，进行拷贝后文件的解压等
+COPY 单纯的拷贝文件</p>
+</blockquote>
+<h2 id=安全>安全</h2>
+<h3 id=不要使用root权限>不要使用root权限</h3>
+<blockquote>
+<p>使用普通用户 利用gosu提升账户权限
+普通账号权限不够用，建议使用gosu来提升权限，而不是sudo,因为gosu提权的进程会
+gosu创建的进程会替换gosu，只有一个进程可以做到PID等于1
+sudo会先创建sudo进程，然后该进程作为父进程去创建子进程，sudo成了1号PID</p>
+</blockquote>
+<pre><code class=language-Dockerfile>#使用普通用户
+user commonUser
+</code></pre>
 </div>
 <div class=my-4>
 <a href=/tags/docker/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#docker</a>
@@ -165,7 +186,16 @@ mac下配置$HOME/.docker/config.json
 <li><a href=#停留在某个构建阶段>停留在某个构建阶段</a></li>
 <li><a href=#禁止docker自启动>禁止docker自启动</a></li>
 <li><a href=#配置docker的镜像加速docker的镜像拉取>配置docker的镜像，加速docker的镜像拉取</a></li>
-<li><a href=#heading></a></li>
+</ul>
+</li>
+<li><a href=#减少镜像的大小>减少镜像的大小</a>
+<ul>
+<li><a href=#使用copy和add区别>使用COPY和ADD区别</a></li>
+</ul>
+</li>
+<li><a href=#安全>安全</a>
+<ul>
+<li><a href=#不要使用root权限>不要使用root权限</a></li>
 </ul>
 </li>
 </ul>
