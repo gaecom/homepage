@@ -138,12 +138,18 @@ mac下配置$HOME/.docker/config.json
 </code></pre>
 <h3 id=使用copy和add区别>使用COPY和ADD区别</h3>
 <blockquote>
-<p>ADD 除了COPY存粹的拷贝本地文件含义，还有拷贝外部文件如http://，进行拷贝后文件的解压等
-COPY 单纯的拷贝文件</p>
+<p>ADD 除了COPY存粹的拷贝本地文件含义，还有拷贝外部文件如http://，进行拷贝后文件的解压等</p>
+</blockquote>
+<blockquote>
+<p>COPY 单纯的拷贝文件</p>
 </blockquote>
 <h3 id=entrypointsh和cmd使用最佳实践>entrypoint.sh和CMD使用最佳实践</h3>
-<p>使用CMD: 最好使用数组,使用字符串的话，docker会使用bash来启动命令行，导致无法正确处理外部信号，因为shell不会把信号传递给子进程
-ENTRYPOINT: 无法通过dockerfile覆盖，只能增加参数，但可以通过docker run &ndash;entrypoint 重新指定，而CMD可以在dockerfile中覆盖父dockerfile的CMD指令</p>
+<blockquote>
+<p>使用CMD: 最好使用数组,使用字符串的话，docker会使用bash来启动命令行，导致无法正确处理外部信号，因为shell不会把信号传递给子进程</p>
+</blockquote>
+<blockquote>
+<p>ENTRYPOINT: 无法通过dockerfile覆盖，只能增加参数，但可以通过docker run &ndash;entrypoint 重新指定，而CMD可以在dockerfile中覆盖父dockerfile的CMD指令</p>
+</blockquote>
 <pre><code class=language-Dockerfile>#使用数组、
 CMD [&quot;pm2&quot;, &quot;start&quot;, &quot;app&quot;]
 ENTRYPOINT [&quot;pm2&quot;, &quot;start&quot;, &quot;app&quot;]
