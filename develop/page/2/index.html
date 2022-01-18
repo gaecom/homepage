@@ -17,14 +17,14 @@
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程","description":"\u003cp\u003e2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程\u003c/p\u003e","url":"/develop/ios/xcode/xcode-archive-ipa/"},{"@type":"ListItem","position":2,"name":"支持emoji表情","description":"支持文章中嵌入各种方式的emoji表情","url":"/develop/markdown/emoji-support/"},{"@type":"ListItem","position":3,"name":"hugo以及hugo的eureka主题使用介绍","description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c/p\u003e","url":"/develop/markdown/hugo-eureka-theme-guide/"},{"@type":"ListItem","position":4,"name":"数学支持","description":"\u003cp\u003e使用 KaTeX 支持数学公式\u003c/p\u003e","url":"/develop/markdown/math-support/"},{"@type":"ListItem","position":5,"name":"hugo的markdown的语法介绍","description":"使用markdown和html语法","url":"/develop/markdown/markdown-syntax/"}]}</script><meta property="og:title" content="开发 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"xcode使用最佳实践","description":"\u003cp\u003e介绍ios开发中关于xcode工具使用、开发、打包、测试、条件编译、发布到应用市场等使用最佳实践\u003c/p\u003e","url":"/develop/ios/xcode/xcode-best-practise/"},{"@type":"ListItem","position":2,"name":"最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程","description":"\u003cp\u003e2022年最新版 xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程\u003c/p\u003e","url":"/develop/ios/xcode/xcode-archive-ipa/"},{"@type":"ListItem","position":3,"name":"支持emoji表情","description":"支持文章中嵌入各种方式的emoji表情","url":"/develop/markdown/emoji-support/"},{"@type":"ListItem","position":4,"name":"hugo以及hugo的eureka主题使用介绍","description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c/p\u003e","url":"/develop/markdown/hugo-eureka-theme-guide/"},{"@type":"ListItem","position":5,"name":"数学支持","description":"\u003cp\u003e使用 KaTeX 支持数学公式\u003c/p\u003e","url":"/develop/markdown/math-support/"}]}</script><meta property="og:title" content="开发 | 小明的技术博客">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/">
 <meta property="og:description" content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
-<meta property="og:updated_time" content="2022-01-01T00:00:00+00:00">
+<meta property="og:updated_time" content="2022-01-04T00:00:00+00:00">
 <meta property="article:section" content="develop">
 <link rel=alternate type=application/rss+xml href=/develop/index.xml title=小明的技术博客>
 <body class="flex flex-col min-h-screen">
@@ -37,6 +37,7 @@
 </button>
 <div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
 <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/3dgis/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">3dgis</a>
 <a href=/ai/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">AI</a>
 <a href=/meta/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">元宇宙</a>
 <a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">区块链</a>
@@ -73,6 +74,28 @@
 </article>
 <div class="bg-secondary-bg rounded px-6">
 <div class="overflow-hidden divide-y">
+<div class=py-6>
+<div class="flex flex-col-reverse lg:flex-row justify-between">
+<div class=w-full>
+<div class=mb-4>
+<a href=/develop/ios/xcode/xcode-best-practise/ class="font-bold text-xl hover:text-eureka">xcode使用最佳实践</a>
+</div>
+<div class=content>
+介绍ios开发中关于xcode工具使用、开发、打包、测试、条件编译、发布到应用市场等使用最佳实践
+</div>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-12-25</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>6分钟阅读时长</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class=py-6>
 <div class="flex flex-col-reverse lg:flex-row justify-between">
 <div class=w-full>
@@ -161,40 +184,6 @@ hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数�
 </div>
 </div>
 </div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/develop/markdown/markdown-syntax/ class="font-bold text-xl hover:text-eureka">hugo的markdown的语法介绍</a>
-</div>
-<div class=content>
-使用markdown和html语法
-</div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2020-03-11</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>1分钟阅读时长</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-folder mr-1"></i>
-<a href=/categories/themes/ class=hover:text-eureka>themes</a>
-<span>, </span>
-<a href=/categories/syntax/ class=hover:text-eureka>syntax</a>
-<span>, </span>
-<a href=/categories/markdown/ class=hover:text-eureka>markdown</a>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-th-list mr-1"></i>
-<a href=/series/markdown/ class=hover:text-eureka>markdown</a>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <ul class="pagination pagination-default">
@@ -210,11 +199,14 @@ hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数�
 <li class="page-item active">
 <a aria-current=page aria-label="Page 2" class=page-link role=button>2</a>
 </li>
-<li class="page-item disabled">
-<a aria-disabled=true aria-label=Next class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;</span></a>
+<li class=page-item>
+<a href=/develop/page/3/ aria-label="Page 3" class=page-link role=button>3</a>
 </li>
-<li class="page-item disabled">
-<a aria-disabled=true aria-label=Last class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;&#187;</span></a>
+<li class=page-item>
+<a href=/develop/page/3/ aria-label=Next class=page-link role=button><span aria-hidden=true>&#187;</span></a>
+</li>
+<li class=page-item>
+<a href=/develop/page/3/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
 </li>
 </ul>
 </div>
