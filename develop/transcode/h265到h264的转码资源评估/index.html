@@ -18,7 +18,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="h265编码的视频进行h264转码资源占用对比，通过资源占用情况计算出成本">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"h265编码的视频进行h264转码资源占用对比","item":"/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/"},"headline":"h265编码的视频进行h264转码资源占用对比 | 小明的技术博客","datePublished":"2021-01-24T00:00:00+00:00","dateModified":"2021-01-24T00:00:00+00:00","wordCount":385,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"h265编码的视频进行h264转码资源占用对比，通过资源占用情况计算出成本"}</script><meta property="og:title" content="h265编码的视频进行h264转码资源占用对比 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/"},"headline":"h265编码的视频进行h264转码资源占用对比 | 小明的技术博客","datePublished":"2021-01-24T00:00:00+00:00","dateModified":"2021-01-24T00:00:00+00:00","wordCount":390,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"h265编码的视频进行h264转码资源占用对比，通过资源占用情况计算出成本"}</script><meta property="og:title" content="h265编码的视频进行h264转码资源占用对比 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/">
@@ -93,9 +93,13 @@
 <p>在同样的图像质量下,h265相比于h264,视频大小减少了大约50%。由于浏览器对h265编解码的支持度不好，需要编码成h264，但是对h265进行编解码耗费CPU算力。因此项目上需要综合考虑是使用h265
 编码，然后转码到h264，节省硬盘划算，还是继续使用h264编码解码节省算力成本划算。</p>
 <h3 id=如何获取gpu的资源占用情况>如何获取GPU的资源占用情况</h3>
-<p>nvidia-smi dmon
+<pre><code class=language-bash>#监控GPU资源使用情况
+nvidia-smi dmon
+# 每隔1s显示GPU的内存、编码、解码资源占用
 nvidia-smi -lms 1000
-nvidia-smi -q -d UTILIZATION</p>
+### 显示编码解码占用
+nvidia-smi -q -d UTILIZATION
+</code></pre>
 <h3 id=cpu和gpu进行转码的资源比较>cpu和gpu进行转码的资源比较</h3>
 <h4 id=使用纯cpu转码的资源占用>使用纯cpu转码的资源占用</h4>
 <p>PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
