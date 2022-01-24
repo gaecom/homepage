@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
 <meta charset=utf-8>
-<title>hugo以及hugo的eureka主题使用介绍 | 小明的技术博客</title>
+<title>支持emoji表情 | 小明的技术博客</title>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -16,18 +16,20 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"hugo以及hugo的eureka主题使用介绍","item":"/develop/markdown/hugo-eureka-theme-guide/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo以及hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":93,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c\/p\u003e"}</script><meta property="og:title" content="hugo以及hugo的eureka主题使用介绍 | 小明的技术博客">
+<meta name=description content="支持文章中嵌入各种方式的emoji表情">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"支持emoji表情","item":"/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/"},"headline":"支持emoji表情 | 小明的技术博客","datePublished":"2021-04-05T00:00:00+00:00","dateModified":"2021-03-05T00:00:00+00:00","wordCount":386,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="支持emoji表情 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
-<meta property="og:url" content="/develop/markdown/hugo-eureka-theme-guide/">
-<meta property="og:description" content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
+<meta property="og:url" content="/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/">
+<meta property="og:description" content="支持文章中嵌入各种方式的emoji表情">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
-<meta property="article:published_time" content="2021-03-31T13:11:22+08:00">
-<meta property="article:modified_time" content="2021-03-31T13:11:22+08:00">
+<meta property="article:published_time" content="2021-04-05T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-03-05T00:00:00+00:00">
 <meta property="article:section" content="develop">
+<meta property="article:tag" content="emoji">
+<meta property="og:see_also" content="/develop/markdown/emoji-support/">
 <body class="flex flex-col min-h-screen">
 <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
 <div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
@@ -72,80 +74,115 @@
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
 <div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-<h1 class="font-bold text-3xl text-primary-text">hugo以及hugo的eureka主题使用介绍</h1>
+<h1 class="font-bold text-3xl text-primary-text">支持emoji表情</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
-<span>2021-03-31</span>
+<span>2021-04-05</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>1分钟阅读时长</span>
+<span>2分钟阅读时长</span>
 </div>
 </div>
 <div class=content>
-<p>hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践</p>
-<h2 id=hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</h2>
-<h3 id=配置logo和toc>配置logo和toc</h3>
-<ol>
-<li>toc 在文章的内容头,配置toc等于true,在config/_default/config.yaml配置(优先级大于根目录的config.toml)层级,从什么标题开始进行tableOfContents</li>
-<li>在params中配置logo的相对目录,logo的位置相对于根目录的assets目录</li>
-<li>变量和函数用法参照 <a href=https://gohugo.io/content-management/organization/>https://gohugo.io/content-management/organization/</a></li>
-</ol>
-<h3 id=加快加载速度>加快加载速度</h3>
-<h4 id=1-配置压缩最佳实践>1. 配置压缩最佳实践</h4>
-<p>在config.yaml中增加</p>
-<pre><code class=language-yaml>minify:
-  disableCSS: false
-  disableHTML: false
-  disableJS: false
-  disableJSON: false
-  disableSVG: false
-  disableXML: false
-  minifyOutput: true
+<p>在同样的图像质量下 h265相比于h264,视频大小减少了大约50%,但是浏览器对h265的支持度不好，需要编码成h264，但是对h265进行编解码耗费CPU算力。因此需要综合考虑是使用h265
+转码节省硬盘划算、还是继续使用h264节省算力划算。</p>
+<h3 id=如何获取gpu的资源占用情况>如何获取GPU的资源占用情况</h3>
+<p>nvidia-smi dmon
+nvidia-smi -lms 1000
+nvidia-smi -q -d UTILIZATION</p>
+<h3 id=cpu和gpu进行转码的资源比较>cpu和gpu进行转码的资源比较</h3>
+<h4 id=使用纯cpu转码的资源占用>使用纯cpu转码的资源占用</h4>
+<p>PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
+143918 root 20 0 802636 31288 5000 S 9.3 0.1 0:36.29 ffmpeg</p>
+<h4 id=一路h265转h264的flv资源占用情况>一路h265转h264的flv资源占用情况</h4>
+<p>使用英伟达(nvidia)的telsa t4 支持30路从h265视频解码然后编码成h264,京东上查找GPU价格12000rmb,支持1000路需要,需要33张，价格380000rmb
+一路转码资源占用情况
+cpu内存1.3 3%的cpu占用，GPU占用 2%-3% encoder占用，GPU内存占用144M
+纯cpu转码，h265编码转为h264 需要10% cpu 0.1 内存占用， 支持1000路需要4台服务器 按照32核的cpu的服务器价格16000计算 价格64000 rmb</p>
+<pre><code class=language-markdown>PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+25328 root      20   0 5507704 170288 150192 S  12.0  0.5   0:03.24 ffmpeg
 
+Sat Jan 22 18:57:31 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.39.01    Driver Version: 510.39.01    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla T4            Off  | 00000000:86:00.0 Off |                    0 |
+| N/A   57C    P0    29W /  70W |    147MiB / 15360MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     12389      C   ffmpeg                            144MiB |
++-----------------------------------------------------------------------------+
+
+
+Timestamp                                 : Sat Jan 22 21:18:30 2022
+Driver Version                            : 510.39.01
+CUDA Version                              : 11.6
+
+Attached GPUs                             : 1
+GPU 00000000:86:00.0
+    Utilization
+        Gpu                               : 1 %
+        Memory                            : 0 %
+        Encoder                           : 2 %
+        Decoder                           : 0 %
+    GPU Utilization Samples
+        Duration                          : 19.88 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+    Memory Utilization Samples
+        Duration                          : 19.88 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+    ENC Utilization Samples
+        Duration                          : 19.88 sec
+        Number of Samples                 : 99
+        Max                               : 4 %
+        Min                               : 2 %
+        Avg                               : 2 %
+    DEC Utilization Samples
+        Duration                          : 19.88 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+
+
+
+# gpu   pwr gtemp mtemp    sm   mem   enc   dec  mclk  pclk
+# Idx     W     C     C     %     %     %     %   MHz   MHz
+    0    30    59     -     1     0     2     0  5000   585
+    0    30    59     -     1     0     2     0  5000   585
+    0    30    59     -     1     0     2     0  5000   585
+    0    30    59     -     1     0     2     0  5000   585
 </code></pre>
-<h4 id=2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</h4>
-<h2 id=支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</h2>
-<h3 id=支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</h3>
-<pre><code class=language-html>&lt;div class=&quot;mermaid&quot;&gt;
-  graph TD
-  sender[Client] --&gt; receiver[Load Balancer]
-  B --&gt; C[Server1]
-  B --&gt; D[Server2]
-&lt;/div&gt;
-
-And here is another:
-
-&lt;div class=&quot;mermaid&quot;&gt;
-  graph TD
-  client[Client] --&gt;|tcp_123| Bank(Load Balancer)
-  B --&gt;|tcp_456| C[Server1]
-  B --&gt;|tcp_456| D[Server2]
-&lt;/div&gt;
-</code></pre>
-<div class=mermaid>
-graph TD
-client[Client] --> Server[Load Balancer]
-B --> C[Server1]
-B --> D[Server2]
 </div>
-<p>And here is another:</p>
-<div class=mermaid>
-graph TD
-A[Client] -->|tcp_123| B(Load Balancer)
-B -->|tcp_456| C[Server1]
-B -->|tcp_456| D[Server2]
-</div>
+<div class=my-4>
+<a href=/tags/emoji/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#emoji</a>
 </div>
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
 <div>
 <span class="block font-bold">上一页</span>
-<a href=/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/ class=block>支持emoji表情</a>
+<a href=/develop/markdown/emoji-support/ class=block>支持emoji表情</a>
 </div>
 <div class="md:text-right mt-4 md:mt-0">
 <span class="block font-bold">下一页</span>
-<a href=/develop/markdown/math-support/ class=block>数学支持</a>
+<a href=/develop/markdown/hugo-eureka-theme-guide/ class=block>hugo以及hugo的eureka主题使用介绍</a>
 </div>
 </div>
 </div>
@@ -156,26 +193,28 @@ B -->|tcp_456| D[Server2]
 <div class="sticky-toc hidden lg:block px-6 pb-6">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</a>
+<li>
 <ul>
-<li><a href=#配置logo和toc>配置logo和toc</a></li>
-<li><a href=#加快加载速度>加快加载速度</a>
+<li><a href=#如何获取gpu的资源占用情况>如何获取GPU的资源占用情况</a></li>
+<li><a href=#cpu和gpu进行转码的资源比较>cpu和gpu进行转码的资源比较</a>
 <ul>
-<li><a href=#1-配置压缩最佳实践>1. 配置压缩最佳实践</a></li>
-<li><a href=#2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</a></li>
+<li><a href=#使用纯cpu转码的资源占用>使用纯cpu转码的资源占用</a></li>
+<li><a href=#一路h265转h264的flv资源占用情况>一路h265转h264的flv资源占用情况</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href=#支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</a>
-<ul>
-<li><a href=#支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </div>
 <script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
+</div>
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+<h2 class="text-lg font-semibold mb-4">相关</h2>
+<div class=content>
+<a href=/develop/markdown/emoji-support/>支持emoji表情</a>
+<br>
+</div>
 </div>
 </div>
 <script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
