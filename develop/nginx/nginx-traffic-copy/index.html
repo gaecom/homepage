@@ -18,7 +18,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="通过http的流量复制,在不影响原有路由的流量的基础上，方便调试">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"nginx的http流量拷贝","item":"/develop/nginx/nginx-traffic-copy/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/nginx/nginx-traffic-copy/"},"headline":"nginx的http流量拷贝 | 小明的技术博客","datePublished":"2022-02-05T00:00:00+00:00","dateModified":"2022-02-05T00:00:00+00:00","wordCount":113,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"通过http的流量复制,在不影响原有路由的流量的基础上，方便调试"}</script><meta property="og:title" content="nginx的http流量拷贝 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/nginx/nginx-traffic-copy/"},"headline":"nginx的http流量拷贝 | 小明的技术博客","datePublished":"2022-02-05T00:00:00+00:00","dateModified":"2022-02-05T00:00:00+00:00","wordCount":111,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"通过http的流量复制,在不影响原有路由的流量的基础上，方便调试"}</script><meta property="og:title" content="nginx的http流量拷贝 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/nginx/nginx-traffic-copy/">
@@ -90,7 +90,7 @@
 </div>
 <div class=content>
 <p>在开发新的应用服务，为了做验证，调试等目的，又不想影响原有的应用服务，可以使用nginx的http流量拷贝,通过http的流量复制,在不影响原有路由的流量的基础上，方便调试</p>
-<h2 id=镜像配置参考>镜像配置参考</h2>
+<h2 id=nginx流量拷贝配置参考>nginx流量拷贝配置参考</h2>
 <ol>
 <li>启动两个http服务，并且配置hosts文件，linux/mac os x 配置 /etc/hosts,windows下配置system32下的hosts文件
 增加127.0.0.1 mirror.io</li>
@@ -152,16 +152,13 @@ server {
 ```bash
 curl http://abc.io
 </code></pre>
-<pre><code>
-## 镜像配置最佳实践
-配置方法如如上&quot;配置mirror镜像日志&quot;。部分错误配置的错误信息在在error日志中。
-
-
-## nginx的http流量复制的FAQ
-代理或者流量拷贝，注意content-length的设置
+<h2 id=镜像配置最佳实践>镜像配置最佳实践</h2>
+<p>配置方法如如上"配置mirror镜像日志"。部分错误配置的错误信息在在error日志中。</p>
+<h2 id=nginx的http流量复制的faq>nginx的http流量复制的FAQ</h2>
+<p>代理或者流量拷贝，注意content-length的设置
 mirror_request_body/proxy_pass_request_body与Content-Length需配置一致
-如果mirror_request_body或者proxy_pass_request_body设置为off，Content-Length必须设置为&quot;&quot;
-因为nginx的mirror_request_body或tomcat的mirror_request_body处理post请求时，会根据请求头Content-Length的大小，若mirror_request_body或者proxy_pass_request_body设置为off，应用以为post有内容，当request_body中没有，处理方会一直等待至超时，则前者为off，nginx会报upstream请求超时·</code></pre>
+如果mirror_request_body或者proxy_pass_request_body设置为off，Content-Length必须设置为""
+因为nginx的mirror_request_body或tomcat的mirror_request_body处理post请求时，会根据请求头Content-Length的大小，若mirror_request_body或者proxy_pass_request_body设置为off，应用以为post有内容，当request_body中没有，处理方会一直等待至超时，则前者为off，nginx会报upstream请求超时·</p>
 </div>
 <div class=my-4>
 <a href=/tags/nginx/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#nginx</a>
@@ -185,7 +182,9 @@ mirror_request_body/proxy_pass_request_body与Content-Length需配置一致
 <div class="sticky-toc hidden lg:block px-6 pb-6">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#镜像配置参考>镜像配置参考</a></li>
+<li><a href=#nginx流量拷贝配置参考>nginx流量拷贝配置参考</a></li>
+<li><a href=#镜像配置最佳实践>镜像配置最佳实践</a></li>
+<li><a href=#nginx的http流量复制的faq>nginx的http流量复制的FAQ</a></li>
 </ul>
 </nav>
 </div>
