@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
 <meta charset=utf-8>
-<title>支持emoji表情 | 小明的技术博客</title>
+<title>sql注入(sql injection)防御 | 小明的技术博客</title>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -16,20 +16,24 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="支持文章中嵌入各种方式的emoji表情">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"支持emoji表情","item":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"},"headline":"支持emoji表情 | 小明的技术博客","datePublished":"2021-04-05T00:00:00+00:00","dateModified":"2021-03-05T00:00:00+00:00","wordCount":1365,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="支持emoji表情 | 小明的技术博客">
+<meta name=description content="使用统一过滤的方式，解决sql注入问题,避免系统改动,增加sql注入、xss、csrf、RCE、RFI、LFI等攻击漏洞">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"sql注入(sql injection)防御","item":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"},"headline":"sql注入(sql injection)防御 | 小明的技术博客","datePublished":"2022-03-01T00:00:00+00:00","dateModified":"2022-03-01T00:00:00+00:00","wordCount":1295,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"使用统一过滤的方式，解决sql注入问题,避免系统改动,增加sql注入、xss、csrf、RCE、RFI、LFI等攻击漏洞"}</script><meta property="og:title" content="sql注入(sql injection)防御 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/">
-<meta property="og:description" content="支持文章中嵌入各种方式的emoji表情">
+<meta property="og:description" content="使用统一过滤的方式，解决sql注入问题,避免系统改动,增加sql注入、xss、csrf、RCE、RFI、LFI等攻击漏洞">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
-<meta property="article:published_time" content="2021-04-05T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-03-05T00:00:00+00:00">
+<meta property="article:published_time" content="2022-03-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-03-01T00:00:00+00:00">
 <meta property="article:section" content="develop">
-<meta property="article:tag" content="emoji">
-<meta property="og:see_also" content="/develop/markdown/emoji-support/">
+<meta property="article:tag" content="modsecurity">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="waf">
+<meta property="article:tag" content="等保3.0">
+<meta property="article:tag" content>
+<meta property="og:see_also" content="/develop/nginx/nginx-traffic-copy/">
 <body class="flex flex-col min-h-screen">
 <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
 <div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
@@ -75,11 +79,11 @@
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
 <div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-<h1 class="font-bold text-3xl text-primary-text">支持emoji表情</h1>
+<h1 class="font-bold text-3xl text-primary-text">sql注入(sql injection)防御</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
-<span>2021-04-05</span>
+<span>2022-03-01</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
@@ -89,7 +93,7 @@
 <div class=content>
 <p>政府系统要求过等保扫描3.0，我们的系统，提示sql注入问题，sql注入属于高危漏洞，必须解决。</p>
 <p>我们的系统内部调用第三方系统，传递参数，查询数据，第三方系统未做过滤导致安全问题，但是第三方数据查询系统不方便进行修改。所以必须
-在我们系统里做拦截和过滤</p>
+在我们系统里做拦截和过滤，为了保证系统稳定性，减少系统代码的改动</p>
 <p>拦截过滤sql注入几种方法</p>
 <ol>
 <li>
@@ -97,7 +101,7 @@
 <a href=https://github.com/gaecom/sql-injection-filter>参考sql injection过滤的库</a></p>
 </li>
 <li>
-<p>在nginx增加waf的防火墙模块，modsecurity。 modsecurity支持恶意ip屏蔽，ip地址涵盖了project honey pot开源工程收集的全球恶意IP、xss、csrf、sqli(sql injection)等的恶意攻击防护
+<p>在nginx增加waf的防火墙模块，modsecurity。 modsecurity支持恶意ip屏蔽，ip地址涵盖了project honey pot开源工程收集的全球恶意IP、xss(跨站脚本攻击)、lfi(本地文件包含)、csrf、rce(远程执行漏洞)、sqli(sql injection)等的恶意攻击防护
 <a href=https://www.nginx.com/products/nginx/modules/nginx-waf/>参考nginx配置文档</a></p>
 </li>
 </ol>
@@ -264,19 +268,12 @@ SecRule TX:/^MSC_/ &quot;!@streq 0&quot; \
 #
 SecResponseBodyAccess On
 
-# Which response MIME types do you want to inspect? You should adjust the
-# configuration below to catch documents but avoid static files
-# (e.g., images and archives).
-#
 SecResponseBodyMimeType text/plain text/html text/xml
 
 # Buffer response bodies of up to 512 KB in length.
 SecResponseBodyLimit 524288
 
-# What happens when we encounter a response body larger than the configured
-# limit? By default, we process what we have and let the rest through.
-# That's somewhat less secure, but does not break any legitimate pages.
-#
+
 SecResponseBodyLimitAction ProcessPartial
 
 
@@ -361,23 +358,24 @@ SecStatusEngine On
 </code></pre>
 </div>
 <div class=my-4>
-<a href=/tags/emoji/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#emoji</a>
+<a href=/tags/modsecurity/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#modsecurity</a>
+<a href=/tags/nginx/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#nginx</a>
+<a href=/tags/waf/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#waf</a>
+<a href=/tags/%E7%AD%89%E4%BF%9D3.0/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#等保3.0</a>
 </div>
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
 <div>
-<span class="block font-bold">上一页</span>
-<a href=/develop/markdown/emoji-support/ class=block>支持emoji表情</a>
 </div>
 <div class="md:text-right mt-4 md:mt-0">
 <span class="block font-bold">下一页</span>
-<a href=/develop/markdown/hugo-eureka-theme-guide/ class=block>hugo以及hugo的eureka主题使用介绍</a>
+<a href=/develop/nginx/nginx-traffic-copy/ class=block>nginx的http流量拷贝</a>
 </div>
 </div>
 </div>
 <div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
 <h2 class="text-lg font-semibold mb-4">相关</h2>
 <div class=content>
-<a href=/develop/markdown/emoji-support/>支持emoji表情</a>
+<a href=/develop/nginx/nginx-traffic-copy/>nginx的http流量拷贝</a>
 <br>
 </div>
 </div>
