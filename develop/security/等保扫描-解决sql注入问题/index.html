@@ -1,0 +1,396 @@
+<!doctype html><html lang=zh><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta charset=utf-8>
+<title>支持emoji表情 | 小明的技术博客</title>
+<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
+<meta name=description content="支持文章中嵌入各种方式的emoji表情">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"支持emoji表情","item":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/"},"headline":"支持emoji表情 | 小明的技术博客","datePublished":"2021-04-05T00:00:00+00:00","dateModified":"2021-03-05T00:00:00+00:00","wordCount":1365,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="支持emoji表情 | 小明的技术博客">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/">
+<meta property="og:description" content="支持文章中嵌入各种方式的emoji表情">
+<meta property="og:locale" content="zh">
+<meta property="og:site_name" content="小明的技术博客">
+<meta property="article:published_time" content="2021-04-05T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-03-05T00:00:00+00:00">
+<meta property="article:section" content="develop">
+<meta property="article:tag" content="emoji">
+<meta property="og:see_also" content="/develop/markdown/emoji-support/">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/3dgis/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">3dgis</a>
+<a href=/ai/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">人工智能</a>
+<a href=/meta/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">元宇宙</a>
+<a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">区块链</a>
+<a href=/media/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">多媒体技术</a>
+<a href=/security/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">安全</a>
+<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">开发</a>
+<a href=/misc/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">杂项</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">支持emoji表情</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-04-05</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>7分钟阅读时长</span>
+</div>
+</div>
+<div class=content>
+<p>政府系统要求过等保扫描3.0，我们的系统，提示sql注入问题，sql注入属于高危漏洞，必须解决。</p>
+<p>我们的系统内部调用第三方系统，传递参数，查询数据，第三方系统未做过滤导致安全问题，但是第三方数据查询系统不方便进行修改。所以必须
+在我们系统里做拦截和过滤</p>
+<p>拦截过滤sql注入几种方法</p>
+<ol>
+<li>
+<p>在业务代码层面增加一个filter,统一的处理输入的恶意参数问题，参考owasp的sql注入规则
+<a href=https://github.com/gaecom/sql-injection-filter>参考sql injection过滤的库</a></p>
+</li>
+<li>
+<p>在nginx增加waf的防火墙模块，modsecurity。 modsecurity支持恶意ip屏蔽，ip地址涵盖了project honey pot开源工程收集的全球恶意IP、xss、csrf、sqli(sql injection)等的恶意攻击防护
+<a href=https://www.nginx.com/products/nginx/modules/nginx-waf/>参考nginx配置文档</a></p>
+</li>
+</ol>
+<p><a href=https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-%28v2.x%29#installation-for-nginx>安装参考文档</a>
+配置代码参考</p>
+<pre><code class=language-conf>location / {
+           ModSecurityEnabled on;
+           ModSecurityConfig modsecurity.conf;
+           # Only needed if including proxies
+           proxy_pass http://localhost:8011;
+           proxy_read_timeout 180s;
+       }
+</code></pre>
+<p>配置modsecurity.conf的参考</p>
+<pre><code class=language-conf>
+#
+SecRuleEngine DetectionOnly
+
+
+SecRequestBodyAccess On
+
+
+# Enable XML request body parser.
+# Initiate XML Processor in case of xml content-type
+#
+SecRule REQUEST_HEADERS:Content-Type &quot;(?:application(?:/soap\+|/)|text/)xml&quot; \
+     &quot;id:'200000',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=XML&quot;
+
+# Enable JSON request body parser.
+# Initiate JSON Processor in case of JSON content-type; change accordingly
+# if your application does not use 'application/json'
+#
+SecRule REQUEST_HEADERS:Content-Type &quot;application/json&quot; \
+     &quot;id:'200001',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=JSON&quot;
+
+# Sample rule to enable JSON request body parser for more subtypes.
+# Uncomment or adapt this rule if you want to engage the JSON
+# Processor for &quot;+json&quot; subtypes
+#
+#SecRule REQUEST_HEADERS:Content-Type &quot;^application/.+[+]json$&quot; \
+#     &quot;id:'200006',phase:1,t:none,t:lowercase,pass,nolog,ctl:requestBodyProcessor=JSON&quot;
+
+# Maximum request body size we will accept for buffering. If you support
+# file uploads then the value given on the first line has to be as large
+# as the largest file you are willing to accept. The second value refers
+# to the size of data, with files excluded. You want to keep that value as
+# low as practical.
+#
+SecRequestBodyLimit 13107200
+SecRequestBodyNoFilesLimit 131072
+
+# What to do if the request body size is above our configured limit.
+# Keep in mind that this setting will automatically be set to ProcessPartial
+# when SecRuleEngine is set to DetectionOnly mode in order to minimize
+# disruptions when initially deploying ModSecurity.
+#
+SecRequestBodyLimitAction Reject
+
+# Maximum parsing depth allowed for JSON objects. You want to keep this
+# value as low as practical.
+#
+SecRequestBodyJsonDepthLimit 512
+
+# Verify that we've correctly processed the request body.
+# As a rule of thumb, when failing to process a request body
+# you should reject the request (when deployed in blocking mode)
+# or log a high-severity alert (when deployed in detection-only mode).
+#
+SecRule REQBODY_ERROR &quot;!@eq 0&quot; \
+&quot;id:'200002', phase:2,t:none,log,deny,status:400,msg:'Failed to parse request body.',logdata:'%{reqbody_error_msg}',severity:2&quot;
+
+# By default be strict with what we accept in the multipart/form-data
+# request body. If the rule below proves to be too strict for your
+# environment consider changing it to detection-only. You are encouraged
+# _not_ to remove it altogether.
+#
+SecRule MULTIPART_STRICT_ERROR &quot;!@eq 0&quot; \
+&quot;id:'200003',phase:2,t:none,log,deny,status:400, \
+msg:'Multipart request body failed strict validation: \
+PE %{REQBODY_PROCESSOR_ERROR}, \
+BQ %{MULTIPART_BOUNDARY_QUOTED}, \
+BW %{MULTIPART_BOUNDARY_WHITESPACE}, \
+DB %{MULTIPART_DATA_BEFORE}, \
+DA %{MULTIPART_DATA_AFTER}, \
+HF %{MULTIPART_HEADER_FOLDING}, \
+LF %{MULTIPART_LF_LINE}, \
+SM %{MULTIPART_MISSING_SEMICOLON}, \
+IQ %{MULTIPART_INVALID_QUOTING}, \
+IP %{MULTIPART_INVALID_PART}, \
+IH %{MULTIPART_INVALID_HEADER_FOLDING}, \
+FL %{MULTIPART_FILE_LIMIT_EXCEEDED}'&quot;
+
+# Did we see anything that might be a boundary?
+#
+# Here is a short description about the ModSecurity Multipart parser: the
+# parser returns with value 0, if all &quot;boundary-like&quot; line matches with
+# the boundary string which given in MIME header. In any other cases it returns
+# with different value, eg. 1 or 2.
+#
+# The RFC 1341 descript the multipart content-type and its syntax must contains
+# only three mandatory lines (above the content):
+# * Content-Type: multipart/mixed; boundary=BOUNDARY_STRING
+# * --BOUNDARY_STRING
+# * --BOUNDARY_STRING--
+#
+# First line indicates, that this is a multipart content, second shows that
+# here starts a part of the multipart content, third shows the end of content.
+#
+# If there are any other lines, which starts with &quot;--&quot;, then it should be
+# another boundary id - or not.
+#
+# After 3.0.3, there are two kinds of types of boundary errors: strict and permissive.
+#
+# If multipart content contains the three necessary lines with correct order, but
+# there are one or more lines with &quot;--&quot;, then parser returns with value 2 (non-zero).
+#
+# If some of the necessary lines (usually the start or end) misses, or the order
+# is wrong, then parser returns with value 1 (also a non-zero).
+#
+# You can choose, which one is what you need. The example below contains the
+# 'strict' mode, which means if there are any lines with start of &quot;--&quot;, then
+# ModSecurity blocked the content. But the next, commented example contains
+# the 'permissive' mode, then you check only if the necessary lines exists in
+# correct order. Whit this, you can enable to upload PEM files (eg &quot;----BEGIN..&quot;),
+# or other text files, which contains eg. HTTP headers.
+#
+# The difference is only the operator - in strict mode (first) the content blocked
+# in case of any non-zero value. In permissive mode (second, commented) the
+# content blocked only if the value is explicit 1. If it 0 or 2, the content will
+# allowed.
+#
+
+#
+# See #1747 and #1924 for further information on the possible values for
+# MULTIPART_UNMATCHED_BOUNDARY.
+#
+SecRule MULTIPART_UNMATCHED_BOUNDARY &quot;@eq 1&quot; \
+    &quot;id:'200004',phase:2,t:none,log,deny,msg:'Multipart parser detected a possible unmatched boundary.'&quot;
+
+
+# PCRE Tuning
+# We want to avoid a potential RegEx DoS condition
+#
+SecPcreMatchLimit 1000
+SecPcreMatchLimitRecursion 1000
+
+# Some internal errors will set flags in TX and we will need to look for these.
+# All of these are prefixed with &quot;MSC_&quot;.  The following flags currently exist:
+#
+# MSC_PCRE_LIMITS_EXCEEDED: PCRE match limits were exceeded.
+#
+SecRule TX:/^MSC_/ &quot;!@streq 0&quot; \
+        &quot;id:'200005',phase:2,t:none,deny,msg:'ModSecurity internal error flagged: %{MATCHED_VAR_NAME}'&quot;
+
+
+# -- Response body handling --------------------------------------------------
+
+# Allow ModSecurity to access response bodies. 
+# You should have this directive enabled in order to identify errors
+# and data leakage issues.
+# 
+# Do keep in mind that enabling this directive does increases both
+# memory consumption and response latency.
+#
+SecResponseBodyAccess On
+
+# Which response MIME types do you want to inspect? You should adjust the
+# configuration below to catch documents but avoid static files
+# (e.g., images and archives).
+#
+SecResponseBodyMimeType text/plain text/html text/xml
+
+# Buffer response bodies of up to 512 KB in length.
+SecResponseBodyLimit 524288
+
+# What happens when we encounter a response body larger than the configured
+# limit? By default, we process what we have and let the rest through.
+# That's somewhat less secure, but does not break any legitimate pages.
+#
+SecResponseBodyLimitAction ProcessPartial
+
+
+# -- Filesystem configuration ------------------------------------------------
+
+# The location where ModSecurity stores temporary files (for example, when
+# it needs to handle a file upload that is larger than the configured limit).
+# 
+# This default setting is chosen due to all systems have /tmp available however, 
+# this is less than ideal. It is recommended that you specify a location that's private.
+#
+SecTmpDir /tmp/
+
+# The location where ModSecurity will keep its persistent data.  This default setting 
+# is chosen due to all systems have /tmp available however, it
+# too should be updated to a place that other users can't access.
+#
+SecDataDir /tmp/
+
+
+# -- File uploads handling configuration -------------------------------------
+
+# The location where ModSecurity stores intercepted uploaded files. This
+# location must be private to ModSecurity. You don't want other users on
+# the server to access the files, do you?
+#
+#SecUploadDir /opt/modsecurity/var/upload/
+
+# By default, only keep the files that were determined to be unusual
+# in some way (by an external inspection script). For this to work you
+# will also need at least one file inspection rule.
+#
+#SecUploadKeepFiles RelevantOnly
+
+# Uploaded files are by default created with permissions that do not allow
+# any other user to access them. You may need to relax that if you want to
+# interface ModSecurity to an external program (e.g., an anti-virus).
+#
+#SecUploadFileMode 0600
+
+
+# -- Debug log configuration -------------------------------------------------
+
+# The default debug log configuration is to duplicate the error, warning
+# and notice messages from the error log.
+#
+#SecDebugLog /opt/modsecurity/var/log/debug.log
+#SecDebugLogLevel 3
+
+
+# -- Audit log configuration -------------------------------------------------
+
+# Log the transactions that are marked by a rule, as well as those that
+# trigger a server error (determined by a 5xx or 4xx, excluding 404,  
+# level response status codes).
+#
+SecAuditEngine RelevantOnly
+SecAuditLogRelevantStatus &quot;^(?:5|4(?!04))&quot;
+
+# Log everything we know about a transaction.
+SecAuditLogParts ABIJDEFHZ
+
+# Use a single file for logging. This is much easier to look at, but
+# assumes that you will use the audit log only ocassionally.
+#
+SecAuditLogType Serial
+SecAuditLog /var/log/modsec_audit.log
+
+# Specify the path for concurrent audit logging.
+#SecAuditLogStorageDir /opt/modsecurity/var/audit/
+
+SecArgumentSeparator &amp;
+
+
+SecCookieFormat 0
+
+SecUnicodeMapFile unicode.mapping 20127
+
+
+SecStatusEngine On
+
+</code></pre>
+</div>
+<div class=my-4>
+<a href=/tags/emoji/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#emoji</a>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">上一页</span>
+<a href=/develop/markdown/emoji-support/ class=block>支持emoji表情</a>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">下一页</span>
+<a href=/develop/markdown/hugo-eureka-theme-guide/ class=block>hugo以及hugo的eureka主题使用介绍</a>
+</div>
+</div>
+</div>
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+<h2 class="text-lg font-semibold mb-4">相关</h2>
+<div class=content>
+<a href=/develop/markdown/emoji-support/>支持emoji表情</a>
+<br>
+</div>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://h.hao.vin/>小明的技术博客</a> and <a href=https://github.com/gaecom>gaecom</a>
+&#183;
+</div></div>
+</footer>
+</body>
+</html>

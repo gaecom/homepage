@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
 <meta charset=utf-8>
-<title>hugo以及hugo的eureka主题使用介绍 | 小明的技术博客</title>
+<title>开发 | 小明的技术博客</title>
 <meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -16,18 +16,17 @@
 <script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
-<meta name=description content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"hugo以及hugo的eureka主题使用介绍","item":"/develop/markdown/hugo-eureka-theme-guide/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/markdown/hugo-eureka-theme-guide/"},"headline":"hugo以及hugo的eureka主题使用介绍 | 小明的技术博客","datePublished":"2021-03-31T13:11:22+08:00","dateModified":"2021-03-31T13:11:22+08:00","wordCount":93,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"\u003cp\u003ehugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践\u003c\/p\u003e"}</script><meta property="og:title" content="hugo以及hugo的eureka主题使用介绍 | 小明的技术博客">
-<meta property="og:type" content="article">
+<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"hugo的markdown的语法介绍","description":"使用markdown和html语法","url":"/develop/markdown/markdown-syntax/"}]}</script><meta property="og:title" content="开发 | 小明的技术博客">
+<meta property="og:type" content="website">
 <meta property="og:image" content="/images/icon.png">
-<meta property="og:url" content="/develop/markdown/hugo-eureka-theme-guide/">
-<meta property="og:description" content="hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践">
+<meta property="og:url" content="/develop/">
+<meta property="og:description" content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
 <meta property="og:locale" content="zh">
 <meta property="og:site_name" content="小明的技术博客">
-<meta property="article:published_time" content="2021-03-31T13:11:22+08:00">
-<meta property="article:modified_time" content="2021-03-31T13:11:22+08:00">
+<meta property="og:updated_time" content="2022-02-05T00:00:00+00:00">
 <meta property="article:section" content="develop">
+<link rel=alternate type=application/rss+xml href=/develop/index.xml title=小明的技术博客>
 <body class="flex flex-col min-h-screen">
 <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
 <div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
@@ -71,115 +70,73 @@
 <main class="flex-grow pt-16">
 <div class=pl-scrollbar>
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-<h1 class="font-bold text-3xl text-primary-text">hugo以及hugo的eureka主题使用介绍</h1>
+<article class="mx-6 my-8">
+<h1 class="font-bold text-3xl text-primary-text">开发</h1>
+</article>
+<div class="bg-secondary-bg rounded px-6">
+<div class="overflow-hidden divide-y">
+<div class=py-6>
+<div class="flex flex-col-reverse lg:flex-row justify-between">
+<div class=w-full>
+<div class=mb-4>
+<a href=/develop/markdown/markdown-syntax/ class="font-bold text-xl hover:text-eureka">hugo的markdown的语法介绍</a>
+</div>
+<div class=content>
+使用markdown和html语法
+</div>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
-<span>2021-03-31</span>
+<span>2020-03-11</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
 <span>1分钟阅读时长</span>
 </div>
+<div class="mr-6 my-2">
+<i class="fas fa-folder mr-1"></i>
+<a href=/categories/themes/ class=hover:text-eureka>themes</a>
+<span>, </span>
+<a href=/categories/syntax/ class=hover:text-eureka>syntax</a>
+<span>, </span>
+<a href=/categories/markdown/ class=hover:text-eureka>markdown</a>
 </div>
-<div class=content>
-<p>hugo以及hugo的eureka主题使用介绍，介绍hugo的基本配置、函数、模版等最佳实践</p>
-<h2 id=hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</h2>
-<h3 id=配置logo和toc>配置logo和toc</h3>
-<ol>
-<li>toc 在文章的内容头,配置toc等于true,在config/_default/config.yaml配置(优先级大于根目录的config.toml)层级,从什么标题开始进行tableOfContents</li>
-<li>在params中配置logo的相对目录,logo的位置相对于根目录的assets目录</li>
-<li>变量和函数用法参照 <a href=https://gohugo.io/content-management/organization/>https://gohugo.io/content-management/organization/</a></li>
-</ol>
-<h3 id=加快加载速度>加快加载速度</h3>
-<h4 id=1-配置压缩最佳实践>1. 配置压缩最佳实践</h4>
-<p>在config.yaml中增加</p>
-<pre><code class=language-yaml>minify:
-  disableCSS: false
-  disableHTML: false
-  disableJS: false
-  disableJSON: false
-  disableSVG: false
-  disableXML: false
-  minifyOutput: true
-
-</code></pre>
-<h4 id=2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</h4>
-<h2 id=支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</h2>
-<h3 id=支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</h3>
-<pre><code class=language-html>&lt;div class=&quot;mermaid&quot;&gt;
-  graph TD
-  sender[Client] --&gt; receiver[Load Balancer]
-  B --&gt; C[Server1]
-  B --&gt; D[Server2]
-&lt;/div&gt;
-
-And here is another:
-
-&lt;div class=&quot;mermaid&quot;&gt;
-  graph TD
-  client[Client] --&gt;|tcp_123| Bank(Load Balancer)
-  B --&gt;|tcp_456| C[Server1]
-  B --&gt;|tcp_456| D[Server2]
-&lt;/div&gt;
-</code></pre>
-<div class=mermaid>
-graph TD
-client[Client] --> Server[Load Balancer]
-B --> C[Server1]
-B --> D[Server2]
-</div>
-<p>And here is another:</p>
-<div class=mermaid>
-graph TD
-A[Client] -->|tcp_123| B(Load Balancer)
-B -->|tcp_456| C[Server1]
-B -->|tcp_456| D[Server2]
-</div>
-</div>
-<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
-<div>
-<span class="block font-bold">上一页</span>
-<a href=/develop/security/%E7%AD%89%E4%BF%9D%E6%89%AB%E6%8F%8F-%E8%A7%A3%E5%86%B3sql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98/ class=block>支持emoji表情</a>
-</div>
-<div class="md:text-right mt-4 md:mt-0">
-<span class="block font-bold">下一页</span>
-<a href=/develop/transcode/h265%E5%88%B0h264%E7%9A%84%E8%BD%AC%E7%A0%81%E8%B5%84%E6%BA%90%E8%AF%84%E4%BC%B0/ class=block>h265编码的视频进行h264转码资源占用对比</a>
+<div class="mr-6 my-2">
+<i class="fas fa-th-list mr-1"></i>
+<a href=/series/markdown/ class=hover:text-eureka>markdown</a>
 </div>
 </div>
 </div>
-<div class=col-span-2>
-<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
-<span class="text-lg font-semibold">本页内容</span>
 </div>
-<div class="sticky-toc hidden lg:block px-6 pb-6">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#hugo搭建完毕进行最佳的设置>hugo搭建完毕，进行最佳的设置</a>
-<ul>
-<li><a href=#配置logo和toc>配置logo和toc</a></li>
-<li><a href=#加快加载速度>加快加载速度</a>
-<ul>
-<li><a href=#1-配置压缩最佳实践>1. 配置压缩最佳实践</a></li>
-<li><a href=#2-删除googleapi的配置以及fontawesome的大的js文件编译出小的fontawesome或者使用淘宝的iconfont替代>2. 删除googleapi的配置以及fontawesome的大的js文件，编译出小的fontawesome或者使用淘宝的iconfont替代</a></li>
-</ul>
+</div>
+</div>
+</div>
+<ul class="pagination pagination-default">
+<li class=page-item>
+<a href=/develop/ aria-label=First class=page-link role=button><span aria-hidden=true>&#171;&#171;</span></a>
+</li>
+<li class=page-item>
+<a href=/develop/page/3/ aria-label=Previous class=page-link role=button><span aria-hidden=true>&#171;</span></a>
+</li>
+<li class=page-item>
+<a href=/develop/ aria-label="Page 1" class=page-link role=button>1</a>
+</li>
+<li class=page-item>
+<a href=/develop/page/2/ aria-label="Page 2" class=page-link role=button>2</a>
+</li>
+<li class=page-item>
+<a href=/develop/page/3/ aria-label="Page 3" class=page-link role=button>3</a>
+</li>
+<li class="page-item active">
+<a aria-current=page aria-label="Page 4" class=page-link role=button>4</a>
+</li>
+<li class="page-item disabled">
+<a aria-disabled=true aria-label=Next class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;</span></a>
+</li>
+<li class="page-item disabled">
+<a aria-disabled=true aria-label=Last class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;&#187;</span></a>
 </li>
 </ul>
-</li>
-<li><a href=#支持画图表表格数学公司的markdown语法>支持画图表、表格、数学公司的markdown语法</a>
-<ul>
-<li><a href=#支持使用mermaid绘图的markdown语法>支持使用mermaid绘图的markdown语法</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
-</div>
-</div>
-<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
 </div>
 </div>
 </main>
