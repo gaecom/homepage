@@ -105,8 +105,10 @@
 <a href=https://www.nginx.com/products/nginx/modules/nginx-waf/>参考nginx配置文档</a></p>
 </li>
 </ol>
-<p><a href=https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-%28v2.x%29#installation-for-nginx>安装参考文档</a>
-配置代码参考</p>
+<p><a href=https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-%28v2.x%29#installation-for-nginx>安装参考文档</a></p>
+<ol start=3>
+<li>配置代码参考</li>
+</ol>
 <pre><code class=language-conf>location / {
            ModSecurityEnabled on;
            ModSecurityConfig modsecurity.conf;
@@ -115,7 +117,9 @@
            proxy_read_timeout 180s;
        }
 </code></pre>
-<p>配置modsecurity.conf的参考</p>
+<ol start=4>
+<li>配置modsecurity.conf的参考</li>
+</ol>
 <pre><code class=language-conf>
 #
 SecRuleEngine DetectionOnly
