@@ -1,0 +1,259 @@
+<!doctype html><html lang=zh><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta charset=utf-8>
+<title>intellij idea的最佳实践和技巧 | 小明的技术博客</title>
+<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
+<meta name=description content="支持文章中嵌入各种方式的emoji表情">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"intellij idea的最佳实践和技巧","item":"/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/"},"headline":"intellij idea的最佳实践和技巧 | 小明的技术博客","datePublished":"2022-05-01T00:00:00+00:00","dateModified":"2022-05-01T00:00:00+00:00","wordCount":114,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="intellij idea的最佳实践和技巧 | 小明的技术博客">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/">
+<meta property="og:description" content="支持文章中嵌入各种方式的emoji表情">
+<meta property="og:locale" content="zh">
+<meta property="og:site_name" content="小明的技术博客">
+<meta property="article:published_time" content="2022-05-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-05-01T00:00:00+00:00">
+<meta property="article:section" content="develop">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="ide">
+<meta property="article:tag" content="intellij idea">
+<meta property="article:tag" content="最佳实践">
+<meta property="article:tag" content="spring boot">
+<meta property="article:tag" content="spring mvc">
+<meta property="og:see_also" content="/develop/java/java%E5%90%AF%E5%8A%A8%E7%A0%94%E7%A9%B6/">
+<meta property="og:see_also" content="/develop/npm-webpack-vite-yarn/npm-package/">
+<meta property="og:see_also" content="/develop/ios/xcode/xcode-best-practise/">
+<meta property="og:see_also" content="/develop/ios/xcode/xcode-archive-ipa/">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/3dgis/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">3dgis</a>
+<a href=/ai/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">人工智能</a>
+<a href=/meta/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">元宇宙</a>
+<a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">区块链</a>
+<a href=/media/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">多媒体技术</a>
+<a href=/security/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">安全</a>
+<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">开发</a>
+<a href=/misc/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">杂项</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">intellij idea的最佳实践和技巧</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2022-05-01</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>1分钟阅读时长</span>
+</div>
+</div>
+<div class=content>
+<p>介绍intellij idea的最佳实践和技巧</p>
+<h2 id=live-template>live template</h2>
+<p>使用缩写，将常用的语言与框架的代码片段配置其中，增加Ali AI 搜索代码 + tabnine 自动进行代码联想，效率大增
+以java为例:
+框架名字前缀+缩写的两个字母
+sb: spring</p>
+<h2 id=工程项目配置>工程项目配置</h2>
+<p><img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-16-59-20.png alt></p>
+<p>模块的配置
+<img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-17-04-27.png alt></p>
+<h2 id=springboot-以war方式部署>springboot 以war方式部署</h2>
+<p>springboot 通过war，以tomcat方式部署</p>
+<ol>
+<li>修改application代码</li>
+</ol>
+<pre><code class=language-java>import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+@SpringBootApplication
+public class SbWarApp extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(SbWarApp.class);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SbWarApp.class, args);
+    }
+}
+</code></pre>
+<ol start=2>
+<li>pom.xml修改</li>
+<li>增加xml,
+scope为provided表示只在编译和测试时候有效
+scope为compile表示只在编译、测试、运行时候有效
+scope为test表示只在测试时候有效</li>
+</ol>
+<pre><code class=language-xml>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start=2>
+<li>打包格式改成war
+<packaging>war</packaging></li>
+<li>配置plugin,指定主要的mainClass</li>
+</ol>
+<pre><code>&lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;repackage&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+
+                &lt;configuration&gt;
+                    &lt;mainClass&gt;cc.i.web1.sbweb1.SbWebWarApp&lt;/mainClass&gt;
+                    &lt;excludes&gt;
+                        &lt;exclude&gt;
+                            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+                            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+                        &lt;/exclude&gt;
+                    &lt;/excludes&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+</code></pre>
+<ol start=4>
+<li>执行mvn package -Dmaven.skip.test</li>
+</ol>
+<h2 id=指定maven配置>指定maven配置</h2>
+<p>export M2_HOME=/Users/i/.m2<br>
+export MAVEN_OPTS="-Xms256m -Xmx512m"</p>
+<h2 id=springboot-用外置的tomcat服务器运行>springboot 用外置的tomcat服务器运行</h2>
+<ol>
+<li>下载tomcat服务器,解压到/usr/local/tomcat目录下
+<a href=https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz>https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz</a></li>
+<li>配置tomcat服务器运行
+<img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-19-27-24.png alt></li>
+<li>配置war exploded 方式暴露运行
+<img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-19-29-30.png alt></li>
+<li>可以选择</li>
+</ol>
+<ul>
+<li>只更新资源和类，不重启服务器，启动快，热更新</li>
+<li>只更新资源，不编译类，启动最快，热更新</li>
+<li>重启服务器，重新编译和重启服务器
+<img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-19-30-42.png alt></li>
+</ul>
+</div>
+<div class=my-4>
+<a href=/tags/java/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#java</a>
+<a href=/tags/ide/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#ide</a>
+<a href=/tags/intellij-idea/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#intellij idea</a>
+<a href=/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#最佳实践</a>
+<a href=/tags/spring-boot/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#spring boot</a>
+<a href=/tags/spring-mvc/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#spring mvc</a>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">下一页</span>
+<a href=/develop/java/java%E5%90%AF%E5%8A%A8%E7%A0%94%E7%A9%B6/ class=block>mac os x下java启动研究</a>
+</div>
+</div>
+</div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#live-template>live template</a></li>
+<li><a href=#工程项目配置>工程项目配置</a></li>
+<li><a href=#springboot-以war方式部署>springboot 以war方式部署</a></li>
+<li><a href=#指定maven配置>指定maven配置</a></li>
+<li><a href=#springboot-用外置的tomcat服务器运行>springboot 用外置的tomcat服务器运行</a></li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
+</div>
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+<h2 class="text-lg font-semibold mb-4">相关</h2>
+<div class=content>
+<a href=/develop/java/java%E5%90%AF%E5%8A%A8%E7%A0%94%E7%A9%B6/>mac os x下java启动研究</a>
+<br>
+<a href=/develop/npm-webpack-vite-yarn/npm-package/>npm最佳实践</a>
+<br>
+<a href=/develop/ios/xcode/xcode-best-practise/>xcode使用最佳实践</a>
+<br>
+<a href=/develop/ios/xcode/xcode-archive-ipa/>最新xcode编译、打包成ipa、测试、发布到appstore/苹果商店/testflight/pyger/fir等完整流程</a>
+<br>
+</div>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://h.hao.vin/>小明的技术博客</a> and <a href=https://github.com/gaecom>gaecom</a>
+&#183;
+</div></div>
+</footer>
+</body>
+</html>
