@@ -18,7 +18,7 @@
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
 <meta name=description content="支持文章中嵌入各种方式的emoji表情">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"intellij idea的最佳实践和技巧","item":"/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/"},"headline":"intellij idea的最佳实践和技巧 | 小明的技术博客","datePublished":"2022-05-01T00:00:00+00:00","dateModified":"2022-05-01T00:00:00+00:00","wordCount":114,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="intellij idea的最佳实践和技巧 | 小明的技术博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/"},"headline":"intellij idea的最佳实践和技巧 | 小明的技术博客","datePublished":"2022-05-01T00:00:00+00:00","dateModified":"2022-05-01T00:00:00+00:00","wordCount":121,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"支持文章中嵌入各种方式的emoji表情"}</script><meta property="og:title" content="intellij idea的最佳实践和技巧 | 小明的技术博客">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/develop/java/intellij-idea%E4%BB%8B%E7%BB%8D/">
@@ -175,12 +175,21 @@ scope为test表示只在测试时候有效</li>
             &lt;/plugin&gt;
 </code></pre>
 <ol start=4>
-<li>执行mvn package -Dmaven.skip.test</li>
+<li>
+<p>执行mvn package -Dmaven.skip.test</p>
+</li>
+<li>
+<p>打包的war，通过tomcat的应用管理器部署，或者手动拷贝到tomcat目录下，修改配置</p>
+</li>
 </ol>
-<h2 id=指定maven配置>指定maven配置</h2>
-<p>export M2_HOME=/Users/i/.m2<br>
-export MAVEN_OPTS="-Xms256m -Xmx512m"</p>
-<h2 id=springboot-用外置的tomcat服务器运行>springboot 用外置的tomcat服务器运行</h2>
+<blockquote>
+<p>注意，访问http://localhost:8080/manager/html，tomcat登录密码可以通过/usr/local/tomcat/conf/tomcat-users.xml进行配置
+增加一行</p>
+</blockquote>
+<pre><code class=language-xml>&lt;user username=&quot;admin&quot; password=&quot;xxx&quot; roles=&quot;manager-gui&quot;/&gt;
+</code></pre>
+<p><img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-19-37-23.png alt></p>
+<h2 id=spring-boot或spring-mvc或jsp-用外置的tomcat服务器运行>spring boot或spring mvc或jsp 用外置的tomcat服务器运行</h2>
 <ol>
 <li>下载tomcat服务器,解压到/usr/local/tomcat目录下
 <a href=https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz>https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz</a></li>
@@ -196,6 +205,9 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"</p>
 <li>重启服务器，重新编译和重启服务器
 <img src=/static/imgs/intellij%20idea%E4%BB%8B%E7%BB%8D/2022-05-02-19-30-42.png alt></li>
 </ul>
+<h2 id=配置maven的jvm参数>配置maven的jvm参数</h2>
+<pre><code class=language-xml>export MAVEN_OPTS=&quot;-Xms256m -Xmx512m&quot;
+</code></pre>
 </div>
 <div class=my-4>
 <a href=/tags/java/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#java</a>
@@ -224,8 +236,8 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"</p>
 <li><a href=#live-template>live template</a></li>
 <li><a href=#工程项目配置>工程项目配置</a></li>
 <li><a href=#springboot-以war方式部署>springboot 以war方式部署</a></li>
-<li><a href=#指定maven配置>指定maven配置</a></li>
-<li><a href=#springboot-用外置的tomcat服务器运行>springboot 用外置的tomcat服务器运行</a></li>
+<li><a href=#spring-boot或spring-mvc或jsp-用外置的tomcat服务器运行>spring boot或spring mvc或jsp 用外置的tomcat服务器运行</a></li>
+<li><a href=#配置maven的jvm参数>配置maven的jvm参数</a></li>
 </ul>
 </nav>
 </div>
