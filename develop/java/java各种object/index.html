@@ -1,0 +1,139 @@
+<!doctype html><html lang=zh><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<meta charset=utf-8>
+<title>java中vo、bo、dto、po、do区别 | 小明的技术博客</title>
+<meta name=description content="介绍与解读国内外最新的架构设计、开发、测试、安全、运维，涵盖人工智能AI、元宇宙、边缘计算区块链、3dgis、物联网IOT、自动驾驶等领域技术">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?7cca921d777c514ee1aec3d1c3cf26b5",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon.png>
+<meta name=description content="java中vo、bo、dto、po、do的区别">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"开发","item":"/develop/"},{"@type":"ListItem","position":2,"name":"java中vo、bo、dto、po、do区别","item":"/develop/java/java%E5%90%84%E7%A7%8Dobject/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/develop/java/java%E5%90%84%E7%A7%8Dobject/"},"headline":"java中vo、bo、dto、po、do区别 | 小明的技术博客","datePublished":"2022-05-05T00:00:00+00:00","dateModified":"2022-05-05T00:00:00+00:00","wordCount":30,"publisher":{"@type":"小明的技术博客","name":"ifa6","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"java中vo、bo、dto、po、do的区别"}</script><meta property="og:title" content="java中vo、bo、dto、po、do区别 | 小明的技术博客">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/develop/java/java%E5%90%84%E7%A7%8Dobject/">
+<meta property="og:description" content="java中vo、bo、dto、po、do的区别">
+<meta property="og:locale" content="zh">
+<meta property="og:site_name" content="小明的技术博客">
+<meta property="article:published_time" content="2022-05-05T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-05-05T00:00:00+00:00">
+<meta property="article:section" content="develop">
+<meta property="article:tag" content="emoji">
+<meta property="og:see_also" content="/ai/cv/opencv%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/">
+<meta property="og:see_also" content="/develop/markdown/emoji-support/">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">小明的技术博客</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/blockchain/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4"></a>
+<a href=/3dgis/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">3dgis</a>
+<a href=/ai/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">人工智能</a>
+<a href=/meta/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">元宇宙</a>
+<a href=/media/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">多媒体技术</a>
+<a href=/security/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">安全</a>
+<a href=/develop/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">开发</a>
+<a href=/misc/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">杂项</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">java中vo、bo、dto、po、do区别</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2022-05-05</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>1分钟阅读时长</span>
+</div>
+</div>
+<div class=content>
+<p>java中vo、bo、dto、po、do、qo、co的区别</p>
+<p>这些对象描述的是一个请求流程不同阶段，交互的数据对象的类型
+api->controller->service1->service2->dao->sql
+api->controller->forward controller->service->dao->sql
+api到controller是dto/Qo/Ro/CommandObject/Co,controller到service是dto</p>
+<p>dto 用户 前端通过api调用后端,controller接收的参数定义为dto，也可以是Ro(Request Object)o或者Qo(Query Object)
+UserQueryRO、UserCreateRO、UserUpdateRO</p>
+<p>vo 在DDD中代表value object的值对象 ，而在传统前后端不分离、或者桌面端应用，vo代表一个页面所有的数据返回
+po(persistant object))/do(data object)/entity 是数据表和对象的对应关系
+BO business object 用于业务间调用,主要作用是把业务逻辑封装为一个对象。这个对象可以包括一个或多个其它的对象
+一个工作经历，有教育经历、工作经历、 关系等等。
+我们可以把教育经历对应一个PO，工作经历对应一个PO， 关系对应一个PO。
+建立一个对应简历的BO对象处理简历，每个BO包含这些PO</p>
+<p>业务对象，常用于业务层之间数据传输。例如：用一个对象在各个类或各个方法之间传递参数</p>
+</div>
+<div class=my-4>
+<a href=/tags/emoji/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#emoji</a>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">下一页</span>
+<a href=/develop/java/springboot-admin-server/ class=block>Spring boot admin server最佳实践</a>
+</div>
+</div>
+</div>
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded p-6">
+<h2 class="text-lg font-semibold mb-4">相关</h2>
+<div class=content>
+<a href=/ai/cv/opencv%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/>opencv手势识别</a>
+<br>
+<a href=/develop/markdown/emoji-support/>支持emoji表情</a>
+<br>
+</div>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://h.hao.vin/>小明的技术博客</a> and <a href=https://github.com/gaecom>gaecom</a>
+&#183;
+</div></div>
+</footer>
+</body>
+</html>
